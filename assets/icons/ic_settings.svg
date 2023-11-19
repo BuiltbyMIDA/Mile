@@ -1,0 +1,10 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="tune">
+<mask id="mask0_1759_19275" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+<rect id="Bounding box" width="20" height="20" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_1759_19275)">
+<path id="tune_2" d="M9.3737 17.2916V12.7083H10.6237V14.375H17.2903V15.625H10.6237V17.2916H9.3737ZM2.70703 15.625V14.375H7.29032V15.625H2.70703ZM6.04036 12.2916V10.625H2.70703V9.375H6.04036V7.70833H7.29032V12.2916H6.04036ZM9.3737 10.625V9.375H17.2903V10.625H9.3737ZM12.707 7.29162V2.70833H13.957V4.375H17.2903V5.62495H13.957V7.29162H12.707ZM2.70703 5.62495V4.375H10.6237V5.62495H2.70703Z" fill="#F8E71D"/>
+</g>
+</g>
+</svg>
