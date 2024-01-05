@@ -9,7 +9,7 @@ class AppColors {
 
   static const Color drawerIcon = Color(0xff1D2939);
 
-  static const Color lightGray = Color(0xffF4F4F4);
+  static const Color lightGray = Color(0xffF4F4F4); 
   static const Color ratingColour = Color(0xffECA700);
   static const Color dottedDivider = Color(0xff7D7D7D);
   static const Color subTitleColor = Color(0xff888888);

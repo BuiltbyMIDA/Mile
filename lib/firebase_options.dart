@@ -17,13 +17,19 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -46,31 +52,12 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCk7j71Y4BvjGDpY3KBQ5cze8iAYJpTp98',
-    appId: '1:1089834042923:web:1d4bfe2dcdb84b03fb4c6e',
-    messagingSenderId: '1089834042923',
-    projectId: 'miles-b6fcd',
-    authDomain: 'miles-b6fcd.firebaseapp.com',
-    storageBucket: 'miles-b6fcd.appspot.com',
-    measurementId: 'G-2789TJN2V7',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBBnFN5CNfkFn1n6TUzXgE8oCquOhRr3a4',
-    appId: '1:1089834042923:android:92b3e7506f5a732cfb4c6e',
+    appId: '1:1089834042923:android:1255abb5dd05244bfb4c6e',
     messagingSenderId: '1089834042923',
     projectId: 'miles-b6fcd',
+    databaseURL: 'https://miles-b6fcd-default-rtdb.firebaseio.com',
     storageBucket: 'miles-b6fcd.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCjjQ-IAovGY8gDAkEIJ7_YGcC57kq9kX0',
-    appId: '1:1089834042923:ios:1765f24c2c1c1971fb4c6e',
-    messagingSenderId: '1089834042923',
-    projectId: 'miles-b6fcd',
-    storageBucket: 'miles-b6fcd.appspot.com',
-    iosClientId: '1089834042923-ejd1vqmchih7m3vvlnr77c7rf4m2o1h4.apps.googleusercontent.com',
-    iosBundleId: 'com.Mile.customer',
   );
 }

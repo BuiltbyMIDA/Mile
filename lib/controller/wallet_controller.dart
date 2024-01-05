@@ -7,34 +7,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:customer/constant/constant.dart';
 import 'package:customer/constant/show_toast_dialog.dart';
 import 'package:customer/model/payment_model.dart';
-import 'package:customer/model/stripe_failed_model.dart';
 import 'package:customer/model/user_model.dart';
 import 'package:customer/model/wallet_transaction_model.dart';
-import 'package:customer/payment/MercadoPagoScreen.dart';
-import 'package:customer/payment/PayFastScreen.dart';
-import 'package:customer/payment/RazorPayFailedModel.dart';
-import 'package:customer/payment/getPaytmTxtToken.dart';
 import 'package:customer/payment/paystack/pay_stack_screen.dart';
 import 'package:customer/payment/paystack/pay_stack_url_model.dart';
 import 'package:customer/payment/paystack/paystack_url_genrater.dart';
-import 'package:customer/themes/app_colors.dart';
 import 'package:customer/utils/fire_store_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_paypal_native/flutter_paypal_native.dart';
-import 'package:flutter_paypal_native/models/custom/currency_code.dart';
-import 'package:flutter_paypal_native/models/custom/environment.dart';
-import 'package:flutter_paypal_native/models/custom/order_callback.dart';
-import 'package:flutter_paypal_native/models/custom/purchase_unit.dart';
-import 'package:flutter_paypal_native/models/custom/user_action.dart';
-import 'package:flutter_paypal_native/str_helper.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
+
 import 'package:flutterwave_standard/flutterwave.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:mercadopago_sdk/mercadopago_sdk.dart';
-import 'package:paytm_allinonesdk/paytm_allinonesdk.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class WalletController extends GetxController {
   Rx<TextEditingController> amountController = TextEditingController().obs;
