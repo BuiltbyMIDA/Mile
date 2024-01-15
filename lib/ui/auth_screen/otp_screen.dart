@@ -1,0 +1,172 @@
+import 'dart:developer';
+
+import 'package:driver/constant/constant.dart';
+import 'package:driver/constant/show_toast_dialog.dart';
+import 'package:driver/controller/otp_controller.dart';
+import 'package:driver/model/driver_user_model.dart';
+import 'package:driver/themes/app_colors.dart';
+import 'package:driver/themes/button_them.dart';
+import 'package:driver/ui/auth_screen/information_screen.dart';
+import 'package:driver/ui/dashboard_screen.dart';
+import 'package:driver/utils/DarkThemeProvider.dart';
+import 'package:driver/utils/fire_store_utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:provider/provider.dart';
+
+class OtpScreen extends StatelessWidget {
+  const OtpScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final themeChange = Provider.of<DarkThemeProvider>(context);
+    return GetX<OtpController>(
+        init: OtpController(),
+        builder: (controller) {
+          return SafeArea(
+              child: Scaffold(
+                  body: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // Image.asset("assets/images/login_image.png"),
+
+                        SizedBox(
+                          height: Get.height * 0.3,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                  "Verify Phone Number".tr,
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 24,
+                                    fontFamily: 'Instrument Sans',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2),
+                                child: Text(
+                                  "We just send a verification code to \n${controller.countryCode.value + controller.phoneNumber.value}"
+                                      .tr,
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Manrope',
+                                    fontWeight: FontWeight.w400,
+                                    letterSpacing: 0.14,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 36),
+                                child: PinCodeTextField(
+                                  length: 6,
+                                  appContext: context,
+                                  keyboardType: TextInputType.phone,
+                                  pinTheme: PinTheme(
+                                    fieldHeight: 50,
+                                    fieldWidth: 50,
+                                    activeColor: AppColors.textFieldBorder,
+                                    selectedColor: AppColors.textFieldBorder,
+                                    inactiveColor: AppColors.textFieldBorder,
+                                    activeFillColor: AppColors.textField,
+                                    inactiveFillColor: AppColors.textField,
+                                    selectedFillColor: AppColors.textField,
+                                    shape: PinCodeFieldShape.box,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  enableActiveFill: true,
+                                  cursorColor: AppColors.primary,
+                                  controller: controller.otpController.value,
+                                  onCompleted: (v) async {},
+                                  onChanged: (value) {},
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  bottomNavigationBar: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 14),
+                    child: ButtonThem.buildButton(
+                      context,
+                      title: "Verify".tr,
+                      onPress: () async {
+                        if (controller.otpController.value.text.length == 6) {
+                          ShowToastDialog.showLoader("Verify OTP".tr);
+
+                          PhoneAuthCredential credential =
+                              PhoneAuthProvider.credential(
+                                  verificationId:
+                                      controller.verificationId.value,
+                                  smsCode: controller.otpController.value.text);
+                          await FirebaseAuth.instance
+                              .signInWithCredential(credential)
+                              .then((value) async {
+                            if (value.additionalUserInfo!.isNewUser) {
+                              log("----->new user");
+                              DriverUserModel userModel = DriverUserModel();
+                              userModel.id = value.user!.uid;
+                              userModel.countryCode =
+                                  controller.countryCode.value;
+                              userModel.phoneNumber =
+                                  controller.phoneNumber.value;
+                              userModel.loginType = Constant.phoneLoginType;
+
+                              ShowToastDialog.closeLoader();
+                              Get.to(const InformationScreen(), arguments: {
+                                "userModel": userModel,
+                              });
+                            } else {
+                              log("----->old user");
+                              FireStoreUtils.userExitOrNot(value.user!.uid)
+                                  .then((userExit) {
+                                ShowToastDialog.closeLoader();
+                                if (userExit == true) {
+                                  Get.to(const DashBoardScreen());
+                                } else {
+                                  DriverUserModel userModel = DriverUserModel();
+                                  userModel.id = value.user!.uid;
+                                  userModel.countryCode =
+                                      controller.countryCode.value;
+                                  userModel.phoneNumber =
+                                      controller.phoneNumber.value;
+                                  userModel.loginType = Constant.phoneLoginType;
+
+                                  Get.to(const InformationScreen(), arguments: {
+                                    "userModel": userModel,
+                                  });
+                                }
+                              });
+                            }
+                          }).catchError((error) {
+                            ShowToastDialog.closeLoader();
+                            ShowToastDialog.showToast("Code is Invalid".tr);
+                          });
+                        } else {
+                          ShowToastDialog.showToast(
+                              "Please Enter Valid OTP".tr);
+                        }
+                      },
+                    ),
+                  )));
+        });
+  }
+}
