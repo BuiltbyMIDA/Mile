@@ -208,10 +208,7 @@ class ProfileScreen extends StatelessWidget {
                                                                 .toString();
                                                       },
                                                       dialogBackgroundColor:
-                                                          themeChange.getThem()
-                                                              ? AppColors
-                                                                  .darkBackground
-                                                              : AppColors
+                                                          AppColors
                                                                   .background,
                                                       initialSelection:
                                                           controller.countryCode

@@ -104,12 +104,10 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                         DriverUserModel driverModel = snapshot.data!;
                                                         return Container(
                                                           decoration: BoxDecoration(
-                                                            color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                            color:  AppColors.containerBackground,
                                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                            border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
-                                                            boxShadow: themeChange.getThem()
-                                                                ? null
-                                                                : [
+                                                            border: Border.all(color:  AppColors.containerBorder, width: 0.5),
+                                                            boxShadow: [
                                                                     BoxShadow(
                                                                       color: Colors.black.withOpacity(0.10),
                                                                       blurRadius: 5,
@@ -128,7 +126,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                                     SvgPicture.asset(
                                                                       'assets/icons/ic_car.svg',
                                                                       width: 18,
-                                                                      color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                      color:  Colors.black,
                                                                     ),
                                                                     const SizedBox(
                                                                       width: 10,
@@ -144,7 +142,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                                     SvgPicture.asset(
                                                                       'assets/icons/ic_color.svg',
                                                                       width: 18,
-                                                                      color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                      color:  Colors.black,
                                                                     ),
                                                                     const SizedBox(
                                                                       width: 10,
@@ -160,7 +158,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                                     Image.asset(
                                                                       'assets/icons/ic_number.png',
                                                                       width: 18,
-                                                                      color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                      color:  Colors.black,
                                                                     ),
                                                                     const SizedBox(
                                                                       width: 10,
@@ -192,12 +190,10 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             ),
                                             Container(
                                               decoration: BoxDecoration(
-                                                color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                color:  AppColors.containerBackground,
                                                 borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
-                                                boxShadow: themeChange.getThem()
-                                                    ? null
-                                                    : [
+                                                border: Border.all(color: AppColors.containerBorder, width: 0.5),
+                                                boxShadow:  [
                                                         BoxShadow(
                                                           color: Colors.black.withOpacity(0.10),
                                                           blurRadius: 5,
@@ -217,7 +213,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                               padding: const EdgeInsets.symmetric(vertical: 20),
                                               child: Container(
                                                 decoration:
-                                                    BoxDecoration(color: themeChange.getThem() ? AppColors.darkGray : AppColors.gray, borderRadius: const BorderRadius.all(Radius.circular(10))),
+                                                    BoxDecoration(color: AppColors.gray, borderRadius: const BorderRadius.all(Radius.circular(10))),
                                                 child: Padding(
                                                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
                                                     child: Center(
@@ -232,12 +228,10 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             ),
                                             Container(
                                               decoration: BoxDecoration(
-                                                color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                color:  AppColors.containerBackground,
                                                 borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
-                                                boxShadow: themeChange.getThem()
-                                                    ? null
-                                                    : [
+                                                border: Border.all(color:  AppColors.containerBorder, width: 0.5),
+                                                boxShadow: [
                                                         BoxShadow(
                                                           color: Colors.black.withOpacity(0.10),
                                                           blurRadius: 5,
@@ -305,12 +299,10 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             ),
                                             Container(
                                               decoration: BoxDecoration(
-                                                color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                color: AppColors.containerBackground,
                                                 borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
-                                                boxShadow: themeChange.getThem()
-                                                    ? null
-                                                    : [
+                                                border: Border.all(color: AppColors.containerBorder, width: 0.5),
+                                                boxShadow:[
                                                         BoxShadow(
                                                           color: Colors.black.withOpacity(0.10),
                                                           blurRadius: 5,
@@ -507,9 +499,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                               borderRadius: const BorderRadius.all(Radius.circular(10)),
                                               border: Border.all(
                                                   color: controller.selectedPaymentMethod.value == controller.paymentModel.value.cash!.name.toString()
-                                                      ? themeChange.getThem()
-                                                          ? AppColors.darkModePrimary
-                                                          : AppColors.primary
+                                                      ?  AppColors.primary
                                                       : AppColors.textFieldBorder,
                                                   width: 1),
                                             ),
@@ -538,7 +528,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                   Radio(
                                                     value: controller.paymentModel.value.cash!.name.toString(),
                                                     groupValue: controller.selectedPaymentMethod.value,
-                                                    activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                    activeColor:  AppColors.primary,
                                                     onChanged: (value) {
                                                       controller.selectedPaymentMethod.value = controller.paymentModel.value.cash!.name.toString();
                                                     },
@@ -569,9 +559,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                               borderRadius: const BorderRadius.all(Radius.circular(10)),
                                               border: Border.all(
                                                   color: controller.selectedPaymentMethod.value == controller.paymentModel.value.wallet!.name.toString()
-                                                      ? themeChange.getThem()
-                                                          ? AppColors.darkModePrimary
-                                                          : AppColors.primary
+                                                      ?  AppColors.primary
                                                       : AppColors.textFieldBorder,
                                                   width: 1),
                                             ),
@@ -598,11 +586,11 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                     ),
                                                   ),
                                                   Text("(${Constant.amountShow(amount: controller.userModel.value.walletAmount.toString())})",
-                                                      style: GoogleFonts.poppins(color: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary)),
+                                                      style: GoogleFonts.poppins(color: AppColors.primary)),
                                                   Radio(
                                                     value: controller.paymentModel.value.wallet!.name.toString(),
                                                     groupValue: controller.selectedPaymentMethod.value,
-                                                    activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                    activeColor:  AppColors.primary,
                                                     onChanged: (value) {
                                                       controller.selectedPaymentMethod.value = controller.paymentModel.value.wallet!.name.toString();
                                                     },
@@ -633,9 +621,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                               borderRadius: const BorderRadius.all(Radius.circular(10)),
                                               border: Border.all(
                                                   color: controller.selectedPaymentMethod.value == controller.paymentModel.value.strip!.name.toString()
-                                                      ? themeChange.getThem()
-                                                          ? AppColors.darkModePrimary
-                                                          : AppColors.primary
+                                                      ?  AppColors.primary
                                                       : AppColors.textFieldBorder,
                                                   width: 1),
                                             ),
@@ -664,7 +650,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                   Radio(
                                                     value: controller.paymentModel.value.strip!.name.toString(),
                                                     groupValue: controller.selectedPaymentMethod.value,
-                                                    activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                    activeColor:  AppColors.primary,
                                                     onChanged: (value) {
                                                       controller.selectedPaymentMethod.value = controller.paymentModel.value.strip!.name.toString();
                                                     },
@@ -694,9 +680,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
                                             border: Border.all(
                                                 color: controller.selectedPaymentMethod.value == controller.paymentModel.value.paypal!.name.toString()
-                                                    ? themeChange.getThem()
-                                                        ? AppColors.darkModePrimary
-                                                        : AppColors.primary
+                                                    ?  AppColors.primary
                                                     : AppColors.textFieldBorder,
                                                 width: 1),
                                           ),
@@ -725,7 +709,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                 Radio(
                                                   value: controller.paymentModel.value.paypal!.name.toString(),
                                                   groupValue: controller.selectedPaymentMethod.value,
-                                                  activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                  activeColor:  AppColors.primary,
                                                   onChanged: (value) {
                                                     controller.selectedPaymentMethod.value = controller.paymentModel.value.paypal!.name.toString();
                                                   },
@@ -754,9 +738,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
                                             border: Border.all(
                                                 color: controller.selectedPaymentMethod.value == controller.paymentModel.value.payStack!.name.toString()
-                                                    ? themeChange.getThem()
-                                                        ? AppColors.darkModePrimary
-                                                        : AppColors.primary
+                                                    ?  AppColors.primary
                                                     : AppColors.textFieldBorder,
                                                 width: 1),
                                           ),
@@ -785,7 +767,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                 Radio(
                                                   value: controller.paymentModel.value.payStack!.name.toString(),
                                                   groupValue: controller.selectedPaymentMethod.value,
-                                                  activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                  activeColor:  AppColors.primary,
                                                   onChanged: (value) {
                                                     controller.selectedPaymentMethod.value = controller.paymentModel.value.payStack!.name.toString();
                                                   },
@@ -814,9 +796,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
                                             border: Border.all(
                                                 color: controller.selectedPaymentMethod.value == controller.paymentModel.value.mercadoPago!.name.toString()
-                                                    ? themeChange.getThem()
-                                                        ? AppColors.darkModePrimary
-                                                        : AppColors.primary
+                                                    ?  AppColors.primary
                                                     : AppColors.textFieldBorder,
                                                 width: 1),
                                           ),
@@ -845,7 +825,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                 Radio(
                                                   value: controller.paymentModel.value.mercadoPago!.name.toString(),
                                                   groupValue: controller.selectedPaymentMethod.value,
-                                                  activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                  activeColor:  AppColors.primary,
                                                   onChanged: (value) {
                                                     controller.selectedPaymentMethod.value = controller.paymentModel.value.mercadoPago!.name.toString();
                                                   },
@@ -874,11 +854,9 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
                                             border: Border.all(
                                                 color: controller.selectedPaymentMethod.value == controller.paymentModel.value.flutterWave!.name.toString()
-                                                    ? themeChange.getThem()
-                                                        ? AppColors.darkModePrimary
-                                                        : AppColors.primary
+                                                    ?  AppColors.primary
                                                     : AppColors.textFieldBorder,
-                                                width: 1),
+                                                width: 1), 
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -905,7 +883,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                 Radio(
                                                   value: controller.paymentModel.value.flutterWave!.name.toString(),
                                                   groupValue: controller.selectedPaymentMethod.value,
-                                                  activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                  activeColor: AppColors.primary,
                                                   onChanged: (value) {
                                                     controller.selectedPaymentMethod.value = controller.paymentModel.value.flutterWave!.name.toString();
                                                   },
@@ -934,9 +912,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
                                             border: Border.all(
                                                 color: controller.selectedPaymentMethod.value == controller.paymentModel.value.payfast!.name.toString()
-                                                    ? themeChange.getThem()
-                                                        ? AppColors.darkModePrimary
-                                                        : AppColors.primary
+                                                    ? AppColors.primary
                                                     : AppColors.textFieldBorder,
                                                 width: 1),
                                           ),
@@ -965,7 +941,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                 Radio(
                                                   value: controller.paymentModel.value.payfast!.name.toString(),
                                                   groupValue: controller.selectedPaymentMethod.value,
-                                                  activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                  activeColor: AppColors.primary,
                                                   onChanged: (value) {
                                                     controller.selectedPaymentMethod.value = controller.paymentModel.value.payfast!.name.toString();
                                                   },
@@ -994,9 +970,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
                                             border: Border.all(
                                                 color: controller.selectedPaymentMethod.value == controller.paymentModel.value.paytm!.name.toString()
-                                                    ? themeChange.getThem()
-                                                        ? AppColors.darkModePrimary
-                                                        : AppColors.primary
+                                                    ?  AppColors.primary
                                                     : AppColors.textFieldBorder,
                                                 width: 1),
                                           ),
@@ -1025,7 +999,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                 Radio(
                                                   value: controller.paymentModel.value.paytm!.name.toString(),
                                                   groupValue: controller.selectedPaymentMethod.value,
-                                                  activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                  activeColor:  AppColors.primary,
                                                   onChanged: (value) {
                                                     controller.selectedPaymentMethod.value = controller.paymentModel.value.paytm!.name.toString();
                                                   },
@@ -1054,9 +1028,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
                                             border: Border.all(
                                                 color: controller.selectedPaymentMethod.value == controller.paymentModel.value.razorpay!.name.toString()
-                                                    ? themeChange.getThem()
-                                                        ? AppColors.darkModePrimary
-                                                        : AppColors.primary
+                                                    ?  AppColors.primary
                                                     : AppColors.textFieldBorder,
                                                 width: 1),
                                           ),
@@ -1085,7 +1057,7 @@ class InterCityPaymentOrderScreen extends StatelessWidget {
                                                 Radio(
                                                   value: controller.paymentModel.value.razorpay!.name.toString(),
                                                   groupValue: controller.selectedPaymentMethod.value,
-                                                  activeColor: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary,
+                                                  activeColor:  AppColors.primary,
                                                   onChanged: (value) {
                                                     controller.selectedPaymentMethod.value = controller.paymentModel.value.razorpay!.name.toString();
                                                   },

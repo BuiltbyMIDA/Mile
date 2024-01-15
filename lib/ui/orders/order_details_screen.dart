@@ -287,19 +287,13 @@ class OrderDetailsScreen extends StatelessWidget {
                                                                         Container(
                                                                       decoration:
                                                                           BoxDecoration(
-                                                                        color: themeChange.getThem()
-                                                                            ? AppColors.darkContainerBackground
-                                                                            : AppColors.containerBackground,
+                                                                        color:  AppColors.containerBackground,
                                                                         borderRadius:
                                                                             const BorderRadius.all(Radius.circular(10)),
                                                                         border: Border.all(
-                                                                            color: themeChange.getThem()
-                                                                                ? AppColors.darkContainerBorder
-                                                                                : AppColors.containerBorder,
+                                                                            color:  AppColors.containerBorder,
                                                                             width: 0.5),
-                                                                        boxShadow: themeChange.getThem()
-                                                                            ? null
-                                                                            : [
+                                                                        boxShadow:  [
                                                                                 BoxShadow(
                                                                                   color: Colors.black.withOpacity(0.10),
                                                                                   blurRadius: 5,
@@ -332,7 +326,7 @@ class OrderDetailsScreen extends StatelessWidget {
                                                                                       SvgPicture.asset(
                                                                                         'assets/icons/ic_car.svg',
                                                                                         width: 18,
-                                                                                        color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                                        color:  Colors.black,
                                                                                       ),
                                                                                       const SizedBox(
                                                                                         width: 10,
@@ -348,7 +342,7 @@ class OrderDetailsScreen extends StatelessWidget {
                                                                                       SvgPicture.asset(
                                                                                         'assets/icons/ic_color.svg',
                                                                                         width: 18,
-                                                                                        color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                                        color: Colors.black,
                                                                                       ),
                                                                                       const SizedBox(
                                                                                         width: 10,
@@ -364,7 +358,7 @@ class OrderDetailsScreen extends StatelessWidget {
                                                                                       Image.asset(
                                                                                         'assets/icons/ic_number.png',
                                                                                         width: 18,
-                                                                                        color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                                        color:  Colors.black,
                                                                                       ),
                                                                                       const SizedBox(
                                                                                         width: 10,
@@ -396,7 +390,7 @@ class OrderDetailsScreen extends StatelessWidget {
                                                                                           CachedNetworkImage(
                                                                                             imageUrl: driverRules.image.toString(),
                                                                                             fit: BoxFit.fill,
-                                                                                            color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                                            color: Colors.black,
                                                                                             height: Responsive.width(4, context),
                                                                                             width: Responsive.width(4, context),
                                                                                             placeholder: (context, url) => Constant.loader(),

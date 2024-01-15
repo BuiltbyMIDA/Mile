@@ -64,12 +64,10 @@ class FaqScreen extends StatelessWidget {
                                             padding: const EdgeInsets.symmetric(vertical: 5),
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                color:  AppColors.containerBackground,
                                                 borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
-                                                boxShadow: themeChange.getThem()
-                                                    ? null
-                                                    : [
+                                                border: Border.all(color:  AppColors.containerBorder, width: 0.5),
+                                                boxShadow:  [
                                                         BoxShadow(
                                                           color: Colors.grey.withOpacity(0.5),
                                                           blurRadius: 8,

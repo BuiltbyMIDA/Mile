@@ -137,45 +137,35 @@ class _ChatScreensState extends State<ChatScreens> {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(30)),
                         borderSide: BorderSide(
-                            color: themeChange.getThem()
-                                ? AppColors.darkTextFieldBorder
-                                : AppColors.textFieldBorder,
+                            color:  AppColors.textFieldBorder,
                             width: 1),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(30)),
                         borderSide: BorderSide(
-                            color: themeChange.getThem()
-                                ? AppColors.darkModePrimary
-                                : AppColors.primary,
+                            color:  AppColors.primary,
                             width: 1),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(30)),
                         borderSide: BorderSide(
-                            color: themeChange.getThem()
-                                ? AppColors.darkTextFieldBorder
-                                : AppColors.textFieldBorder,
+                            color:AppColors.textFieldBorder,
                             width: 1),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(30)),
                         borderSide: BorderSide(
-                            color: themeChange.getThem()
-                                ? AppColors.darkTextFieldBorder
-                                : AppColors.textFieldBorder,
+                            color:AppColors.textFieldBorder,
                             width: 1),
                       ),
                       border: OutlineInputBorder(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(30)),
                         borderSide: BorderSide(
-                            color: themeChange.getThem()
-                                ? AppColors.darkTextFieldBorder
-                                : AppColors.textFieldBorder,
+                            color:  AppColors.textFieldBorder,
                             width: 1),
                       ),
                       suffixIcon: IconButton(
@@ -234,9 +224,7 @@ class _ChatScreensState extends State<ChatScreens> {
                   data.messageType == "text"
                       ? Container(
                           decoration: BoxDecoration(
-                            color: themeChange.getThem()
-                                ? AppColors.darkModePrimary
-                                : AppColors.primary,
+                            color:  AppColors.primary,
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(10),
                                 topRight: Radius.circular(10),
@@ -249,9 +237,7 @@ class _ChatScreensState extends State<ChatScreens> {
                             style: TextStyle(
                                 color: data.senderId ==
                                         FireStoreUtils.getCurrentUid()
-                                    ? themeChange.getThem()
-                                        ? Colors.black
-                                        : Colors.white
+                                    ?  Colors.white
                                     : Colors.black),
                           ),
                         )

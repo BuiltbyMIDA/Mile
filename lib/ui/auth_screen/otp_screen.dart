@@ -76,24 +76,12 @@ class OtpScreen extends StatelessWidget {
                                 pinTheme: PinTheme(
                                   fieldHeight: 50,
                                   fieldWidth: 50,
-                                  activeColor: themeChange.getThem()
-                                      ? AppColors.darkTextFieldBorder
-                                      : AppColors.textFieldBorder,
-                                  selectedColor: themeChange.getThem()
-                                      ? AppColors.darkTextFieldBorder
-                                      : AppColors.textFieldBorder,
-                                  inactiveColor: themeChange.getThem()
-                                      ? AppColors.darkTextFieldBorder
-                                      : AppColors.textFieldBorder,
-                                  activeFillColor: themeChange.getThem()
-                                      ? AppColors.darkTextField
-                                      : AppColors.textField,
-                                  inactiveFillColor: themeChange.getThem()
-                                      ? AppColors.darkTextField
-                                      : AppColors.textField,
-                                  selectedFillColor: themeChange.getThem()
-                                      ? AppColors.darkTextField
-                                      : AppColors.textField,
+                                  activeColor: AppColors.textFieldBorder,
+                                  selectedColor:AppColors.textFieldBorder,
+                                  inactiveColor:  AppColors.textFieldBorder,
+                                  activeFillColor:  AppColors.textField,
+                                  inactiveFillColor: AppColors.textField,
+                                  selectedFillColor:  AppColors.textField,
                                   shape: PinCodeFieldShape.box,
                                   borderRadius: BorderRadius.circular(10),
                                 ),

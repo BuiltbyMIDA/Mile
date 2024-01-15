@@ -60,9 +60,7 @@ class InboxScreen extends StatelessWidget {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(10)),
                         border: Border.all(
-                            color: themeChange.getThem()
-                                ? AppColors.darkContainerBorder
-                                : AppColors.containerBorder,
+                            color:AppColors.containerBorder,
                             width: 0.5),
                         boxShadow: [
                           BoxShadow(

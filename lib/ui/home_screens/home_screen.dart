@@ -94,10 +94,7 @@ class HomeScreen extends StatelessWidget {
                                       // Column(
                                       //   children: [
                                       //     SvgPicture.asset(
-                                      //         // themeChange.getThem()
-                                      //         //     ?
-                                      //         'assets/icons/ic_source_dark.svg',
-                                      //         // : 'assets/icons/ic_source.svg',
+                                      //         'assets/icons/ic_source.svg',
                                       //         width: 18),
                                       //     Dash(
                                       //         direction: Axis.vertical,
@@ -107,9 +104,7 @@ class HomeScreen extends StatelessWidget {
                                       //         dashColor:
                                       //             AppColors.dottedDivider),
                                       //     SvgPicture.asset(
-                                      //         themeChange.getThem()
-                                      //             ? 'assets/icons/ic_destination_dark.svg'
-                                      //             : 'assets/icons/ic_destination.svg',
+                                      //       'assets/icons/ic_destination.svg',
                                       //         width: 20),
                                       //   ],
                                       // ),

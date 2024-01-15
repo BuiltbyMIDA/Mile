@@ -140,9 +140,7 @@ class InformationScreen extends StatelessWidget {
                               decoration: InputDecoration(
                                   isDense: true,
                                   filled: true,
-                                  fillColor: themeChange.getThem()
-                                      ? AppColors.darkTextField
-                                      : AppColors.textField,
+                                  fillColor:AppColors.textField,
                                   contentPadding:
                                       const EdgeInsets.symmetric(vertical: 12),
                                   prefixIcon: CountryCodePicker(
@@ -150,9 +148,7 @@ class InformationScreen extends StatelessWidget {
                                       controller.countryCode.value =
                                           value.dialCode.toString();
                                     },
-                                    dialogBackgroundColor: themeChange.getThem()
-                                        ? AppColors.darkBackground
-                                        : AppColors.background,
+                                    dialogBackgroundColor:AppColors.background,
                                     initialSelection:
                                         controller.countryCode.value,
                                     comparator: (a, b) =>
@@ -162,49 +158,39 @@ class InformationScreen extends StatelessWidget {
                                           BorderRadius.all(Radius.circular(2)),
                                     ),
                                   ),
-                                  disabledBorder: OutlineInputBorder(
-                                    borderRadius: const BorderRadius.all(
+                                  disabledBorder: const OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
                                         Radius.circular(12)),
                                     borderSide: BorderSide(
-                                        color: themeChange.getThem()
-                                            ? AppColors.darkTextFieldBorder
-                                            : AppColors.textFieldBorder,
+                                        color: AppColors.textFieldBorder,
                                         width: 1),
                                   ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: const BorderRadius.all(
+                                  focusedBorder: const OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
                                         Radius.circular(12)),
                                     borderSide: BorderSide(
-                                        color: themeChange.getThem()
-                                            ? AppColors.darkTextFieldBorder
-                                            : AppColors.textFieldBorder,
+                                        color: AppColors.textFieldBorder,
                                         width: 1),
                                   ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: const BorderRadius.all(
+                                  enabledBorder: const OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
                                         Radius.circular(12)),
                                     borderSide: BorderSide(
-                                        color: themeChange.getThem()
-                                            ? AppColors.darkTextFieldBorder
-                                            : AppColors.textFieldBorder,
+                                        color:  AppColors.textFieldBorder,
                                         width: 1),
                                   ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderRadius: const BorderRadius.all(
+                                  errorBorder: const OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
                                         Radius.circular(12)),
                                     borderSide: BorderSide(
-                                        color: themeChange.getThem()
-                                            ? AppColors.darkTextFieldBorder
-                                            : AppColors.textFieldBorder,
+                                        color:  AppColors.textFieldBorder,
                                         width: 1),
                                   ),
-                                  border: OutlineInputBorder(
-                                    borderRadius: const BorderRadius.all(
+                                  border: const OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
                                         Radius.circular(12)),
                                     borderSide: BorderSide(
-                                        color: themeChange.getThem()
-                                            ? AppColors.darkTextFieldBorder
-                                            : AppColors.textFieldBorder,
+                                        color: AppColors.textFieldBorder,
                                         width: 1),
                                   ),
                                   hintText: "Phone number".tr)),

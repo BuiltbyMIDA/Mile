@@ -144,7 +144,7 @@ class DashBoardController extends GetxController {
   RxInt selectedDrawerIndex = 0.obs;
 
   onSelectItem(int index) async {
-    if (index == 11) {
+    if (index == 9) {
       await FirebaseAuth.instance.signOut();
       Get.offAll(const LoginScreen());
     } else {

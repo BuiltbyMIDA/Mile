@@ -24,7 +24,7 @@ class TextFieldThem {
         keyboardType: keyBoardType,
         maxLines: maxLine,
         style: GoogleFonts.poppins(
-            color: themeChange.getThem() ? Colors.white : Colors.black),
+            color:  Colors.black),
         decoration: InputDecoration(
             filled: true,
             fillColor: AppColors.textField,
@@ -33,9 +33,7 @@ class TextFieldThem {
             disabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(12)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color:AppColors.textFieldBorder,
                   width: 1),
             ),
             focusedBorder: const OutlineInputBorder(
@@ -45,25 +43,19 @@ class TextFieldThem {
             enabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(12)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color:  AppColors.textFieldBorder,
                   width: 1),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(12)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color:  AppColors.textFieldBorder,
                   width: 1),
             ),
             border: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(12)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: AppColors.textFieldBorder,
                   width: 1),
             ),
             hintStyle: const TextStyle(
@@ -138,52 +130,40 @@ class TextFieldThem {
         enabled: enable,
         keyboardType: keyBoardType,
         style: GoogleFonts.poppins(
-            color: themeChange.getThem() ? Colors.white : Colors.black),
+            color: Colors.black),
         decoration: InputDecoration(
             suffixIcon: suffixIcon,
             filled: true,
-            fillColor: themeChange.getThem()
-                ? AppColors.darkTextField
-                : AppColors.textField,
+            fillColor: AppColors.textField,
             contentPadding: const EdgeInsets.only(left: 10, right: 10),
             disabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: AppColors.textFieldBorder,
                   width: 1),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkModePrimary
-                      : AppColors.primary,
+                  color:AppColors.primary,
                   width: 1),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: AppColors.textFieldBorder,
                   width: 1),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: AppColors.textFieldBorder,
                   width: 1),
             ),
             border: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color:  AppColors.textFieldBorder,
                   width: 1),
             ),
             hintText: hintText));

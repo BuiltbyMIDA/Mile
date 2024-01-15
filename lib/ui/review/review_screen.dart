@@ -38,7 +38,7 @@ class ReviewScreen extends StatelessWidget {
                     Icons.arrow_back,
                   )),
             ),
-            backgroundColor: themeChange.getThem() ? AppColors.darkBackground : AppColors.primary,
+            backgroundColor:  AppColors.primary,
             body: controller.isLoading.value == true
                 ? Constant.loader()
                 : Stack(

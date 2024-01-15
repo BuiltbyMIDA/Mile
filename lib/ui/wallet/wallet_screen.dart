@@ -214,24 +214,16 @@ class WalletScreen extends StatelessWidget {
                                         },
                                         child: Container(
                                             decoration: BoxDecoration(
-                                              color: themeChange.getThem()
-                                                  ? AppColors
-                                                      .darkContainerBackground
-                                                  : AppColors
+                                              color: AppColors
                                                       .containerBackground,
                                               borderRadius:
                                                   const BorderRadius.all(
                                                       Radius.circular(10)),
                                               border: Border.all(
-                                                  color: themeChange.getThem()
-                                                      ? AppColors
-                                                          .darkContainerBorder
-                                                      : AppColors
+                                                  color:  AppColors
                                                           .containerBorder,
                                                   width: 0.5),
-                                              boxShadow: themeChange.getThem()
-                                                  ? null
-                                                  : [
+                                              boxShadow:  [
                                                       BoxShadow(
                                                         color: Colors.black
                                                             .withOpacity(0.10),
@@ -670,19 +662,13 @@ class WalletScreen extends StatelessWidget {
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: themeChange.getThem()
-                            ? AppColors.darkContainerBackground
-                            : AppColors.containerBackground,
+                        color:  AppColors.containerBackground,
                         borderRadius:
                             const BorderRadius.all(Radius.circular(10)),
                         border: Border.all(
-                            color: themeChange.getThem()
-                                ? AppColors.darkContainerBorder
-                                : AppColors.containerBorder,
+                            color: AppColors.containerBorder,
                             width: 0.5),
-                        boxShadow: themeChange.getThem()
-                            ? null
-                            : [
+                        boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.10),
                                   blurRadius: 5,
@@ -725,19 +711,13 @@ class WalletScreen extends StatelessWidget {
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: themeChange.getThem()
-                            ? AppColors.darkContainerBackground
-                            : AppColors.containerBackground,
+                        color:  AppColors.containerBackground,
                         borderRadius:
                             const BorderRadius.all(Radius.circular(10)),
                         border: Border.all(
-                            color: themeChange.getThem()
-                                ? AppColors.darkContainerBorder
-                                : AppColors.containerBorder,
+                            color:  AppColors.containerBorder,
                             width: 0.5),
-                        boxShadow: themeChange.getThem()
-                            ? null
-                            : [
+                        boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.10),
                                   blurRadius: 5,

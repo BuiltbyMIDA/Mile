@@ -284,9 +284,7 @@ class ReferralScreen extends StatelessWidget {
                                                       'assets/icons/airport_shuttle.svg',
                                                       width: 22,
                                                       color:
-                                                          themeChange.getThem()
-                                                              ? Colors.white
-                                                              : Colors.black),
+                                                        Colors.black),
                                                   const SizedBox(
                                                     width: 10,
                                                   ),
