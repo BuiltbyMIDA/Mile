@@ -424,14 +424,15 @@ class OrderScreen extends StatelessWidget {
                                                                       Container(
                                                                     height: 44,
                                                                     decoration: BoxDecoration(
-                                                                        color:AppColors
-                                                                                .primary,
+                                                                        color: AppColors
+                                                                            .primary,
                                                                         borderRadius:
                                                                             BorderRadius.circular(5)),
                                                                     child: Icon(
                                                                         Icons
                                                                             .chat,
-                                                                        color:  Colors.white),
+                                                                        color: Colors
+                                                                            .white),
                                                                   ),
                                                                 ),
                                                               ),
@@ -454,14 +455,15 @@ class OrderScreen extends StatelessWidget {
                                                                       Container(
                                                                     height: 44,
                                                                     decoration: BoxDecoration(
-                                                                        color:  AppColors
-                                                                                .primary,
+                                                                        color: AppColors
+                                                                            .primary,
                                                                         borderRadius:
                                                                             BorderRadius.circular(5)),
                                                                     child: Icon(
                                                                         Icons
                                                                             .call,
-                                                                        color:  Colors.white),
+                                                                        color: Colors
+                                                                            .white),
                                                                   ),
                                                                 ),
                                                               )
@@ -589,26 +591,24 @@ class OrderScreen extends StatelessWidget {
                                             padding: const EdgeInsets.all(10),
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                color:  AppColors
-                                                        .containerBackground,
+                                                color: AppColors
+                                                    .containerBackground,
                                                 borderRadius:
                                                     const BorderRadius.all(
                                                         Radius.circular(10)),
                                                 border: Border.all(
-                                                    color:  AppColors
-                                                            .containerBorder,
+                                                    color: AppColors
+                                                        .containerBorder,
                                                     width: 0.5),
                                                 boxShadow: [
-                                                        BoxShadow(
-                                                          color: Colors.black
-                                                              .withOpacity(
-                                                                  0.10),
-                                                          blurRadius: 5,
-                                                          offset: const Offset(
-                                                              0,
-                                                              4), // changes position of shadow
-                                                        ),
-                                                      ],
+                                                  BoxShadow(
+                                                    color: Colors.black
+                                                        .withOpacity(0.10),
+                                                    blurRadius: 5,
+                                                    offset: const Offset(0,
+                                                        4), // changes position of shadow
+                                                  ),
+                                                ],
                                               ),
                                               child: InkWell(
                                                   onTap: () {
@@ -786,26 +786,24 @@ class OrderScreen extends StatelessWidget {
                                             padding: const EdgeInsets.all(10),
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                color:  AppColors
-                                                        .containerBackground,
+                                                color: AppColors
+                                                    .containerBackground,
                                                 borderRadius:
                                                     const BorderRadius.all(
                                                         Radius.circular(10)),
                                                 border: Border.all(
-                                                    color:  AppColors
-                                                            .containerBorder,
+                                                    color: AppColors
+                                                        .containerBorder,
                                                     width: 0.5),
                                                 boxShadow: [
-                                                        BoxShadow(
-                                                          color: Colors.black
-                                                              .withOpacity(
-                                                                  0.10),
-                                                          blurRadius: 5,
-                                                          offset: const Offset(
-                                                              0,
-                                                              4), // changes position of shadow
-                                                        ),
-                                                      ],
+                                                  BoxShadow(
+                                                    color: Colors.black
+                                                        .withOpacity(0.10),
+                                                    blurRadius: 5,
+                                                    offset: const Offset(0,
+                                                        4), // changes position of shadow
+                                                  ),
+                                                ],
                                               ),
                                               child: Padding(
                                                 padding:

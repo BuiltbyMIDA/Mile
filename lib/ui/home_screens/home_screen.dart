@@ -633,14 +633,15 @@ class HomeScreen extends StatelessWidget {
                                         ShowToastDialog.showToast(
                                             "Please select more than two ${Constant.distanceType} location"
                                                 .tr);
-                                      } else if (controller.selectedType.value
-                                                  .offerRate ==
-                                              true &&
-                                          controller.offerYourRateController
-                                              .value.text.isEmpty) {
-                                        ShowToastDialog.showToast(
-                                            "Please Enter offer rate".tr);
+                                        // } else if (controller.selectedType.value
+                                        //             .offerRate ==
+                                        //         true &&
+                                        //     controller.offerYourRateController
+                                        //         .value.text.isEmpty) {
+                                        //   ShowToastDialog.showToast(
+                                        //       "Please Enter offer rate".tr);
                                       } else {
+                                        ShowToastDialog.showToast("Start".tr);
                                         // ShowToastDialog.showLoader("Please wait");
                                         OrderModel orderModel = OrderModel();
                                         orderModel.id = Constant.getUuid();
@@ -664,14 +665,20 @@ class HomeScreen extends StatelessWidget {
                                             controller.distance.value;
                                         orderModel.distanceType =
                                             Constant.distanceType;
-                                        orderModel.offerRate = controller
-                                                    .selectedType
-                                                    .value
-                                                    .offerRate ==
-                                                true
-                                            ? controller.offerYourRateController
-                                                .value.text
-                                            : controller.amount.value;
+                                        print(
+                                            "----->${controller.amount.value}");
+                                        orderModel.offerRate =
+                                            // controller
+                                            //             .selectedType
+                                            //             .value
+                                            //             .offerRate ==
+                                            //         true
+                                            //     ? controller.offerYourRateController
+                                            //         .value.text
+                                            //     :
+                                            // ShowToastDialog.showToast(
+                                            //     "Ride Placed ".tr);
+                                            controller.amount.value;
                                         orderModel.serviceId =
                                             controller.selectedType.value.id;
                                         GeoFirePoint position = GeoFlutterFire()
@@ -735,7 +742,7 @@ class HomeScreen extends StatelessWidget {
                                           ShowToastDialog.showToast(
                                               "Ride Placed successfully".tr);
                                           controller.dashboardController
-                                              .selectedDrawerIndex(2);
+                                              .selectedDrawerIndex(1);
                                           ShowToastDialog.closeLoader();
                                         });
                                       }

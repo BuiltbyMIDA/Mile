@@ -287,19 +287,24 @@ class OrderDetailsScreen extends StatelessWidget {
                                                                         Container(
                                                                       decoration:
                                                                           BoxDecoration(
-                                                                        color:  AppColors.containerBackground,
+                                                                        color: AppColors
+                                                                            .containerBackground,
                                                                         borderRadius:
                                                                             const BorderRadius.all(Radius.circular(10)),
                                                                         border: Border.all(
-                                                                            color:  AppColors.containerBorder,
+                                                                            color:
+                                                                                AppColors.containerBorder,
                                                                             width: 0.5),
-                                                                        boxShadow:  [
-                                                                                BoxShadow(
-                                                                                  color: Colors.black.withOpacity(0.10),
-                                                                                  blurRadius: 5,
-                                                                                  offset: const Offset(0, 4), // changes position of shadow
-                                                                                ),
-                                                                              ],
+                                                                        boxShadow: [
+                                                                          BoxShadow(
+                                                                            color:
+                                                                                Colors.black.withOpacity(0.10),
+                                                                            blurRadius:
+                                                                                5,
+                                                                            offset:
+                                                                                const Offset(0, 4), // changes position of shadow
+                                                                          ),
+                                                                        ],
                                                                       ),
                                                                       child:
                                                                           Column(
@@ -326,7 +331,7 @@ class OrderDetailsScreen extends StatelessWidget {
                                                                                       SvgPicture.asset(
                                                                                         'assets/icons/ic_car.svg',
                                                                                         width: 18,
-                                                                                        color:  Colors.black,
+                                                                                        color: Colors.black,
                                                                                       ),
                                                                                       const SizedBox(
                                                                                         width: 10,
@@ -358,7 +363,7 @@ class OrderDetailsScreen extends StatelessWidget {
                                                                                       Image.asset(
                                                                                         'assets/icons/ic_number.png',
                                                                                         width: 18,
-                                                                                        color:  Colors.black,
+                                                                                        color: Colors.black,
                                                                                       ),
                                                                                       const SizedBox(
                                                                                         width: 10,
