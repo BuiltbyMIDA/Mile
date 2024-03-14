@@ -36,7 +36,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
   android {
               
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -64,19 +64,19 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
     }
 
     signingConfigs {
-        release {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
-        }
+        // release {
+        //     keyAlias keystoreProperties['keyAlias']
+        //     keyPassword keystoreProperties['keyPassword']
+        //     storeFile file(keystoreProperties['storeFile'])
+        //     storePassword keystoreProperties['storePassword']
+        // }
     }
     buildTypes {
               
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
         }
     }
 }
