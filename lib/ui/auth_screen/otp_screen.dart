@@ -1,30 +1,16 @@
-import 'package:customer/constant/constant.dart';
-import 'package:customer/constant/show_toast_dialog.dart';
-import 'package:customer/controller/otp_controller.dart';
-import 'package:customer/model/user_model.dart';
 import 'package:customer/themes/app_colors.dart';
 import 'package:customer/themes/button_them.dart';
-import 'package:customer/ui/auth_screen/information_screen.dart';
-import 'package:customer/ui/dashboard_screen.dart';
-import 'package:customer/utils/DarkThemeProvider.dart';
-import 'package:customer/utils/fire_store_utils.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:provider/provider.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
-    return GetX<OtpController>(
-        init: OtpController(),
-        builder: (controller) {
-          return SafeArea(
+   
+     return SafeArea(
             child: Scaffold(
                 body: SingleChildScrollView(
                   child: Column(
@@ -56,7 +42,7 @@ class OtpScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(top: 2),
                               child: Text(
-                                "We just send a verification code to \n${controller.countryCode.value + controller.phoneNumber.value}"
+                                "We just send a verification code to "
                                     .tr,
                                 style: const TextStyle(
                                   color: Colors.black,
@@ -87,7 +73,7 @@ class OtpScreen extends StatelessWidget {
                                 ),
                                 enableActiveFill: true,
                                 cursorColor: AppColors.primary,
-                                controller: controller.otpController.value,
+                                controller: TextEditingController(),
                                 onCompleted: (v) async {},
                                 onChanged: (value) {},
                               ),
@@ -108,78 +94,11 @@ class OtpScreen extends StatelessWidget {
                     context,
                     title: "Verify".tr,
                     onPress: () async {
-                      if (controller.otpController.value.text.length == 6) {
-                        ShowToastDialog.showLoader("Verify OTP".tr);
-
-                        PhoneAuthCredential credential =
-                            PhoneAuthProvider.credential(
-                                verificationId: controller.verificationId.value,
-                                smsCode: controller.otpController.value.text);
-                        await FirebaseAuth.instance
-                            .signInWithCredential(credential)
-                            .then((value) async {
-                          if (value.additionalUserInfo!.isNewUser) {
-                            print("----->new user");
-                            UserModel userModel = UserModel();
-                            userModel.id = value.user!.uid;
-                            userModel.countryCode =
-                                controller.countryCode.value;
-                            userModel.phoneNumber =
-                                controller.phoneNumber.value;
-                            userModel.loginType = Constant.phoneLoginType;
-
-                            ShowToastDialog.closeLoader();
-                            Get.to(const InformationScreen(), arguments: {
-                              "userModel": userModel,
-                            });
-                          } else {
-                            print("----->old user");
-                            FireStoreUtils.userExitOrNot(value.user!.uid)
-                                .then((userExit) async {
-                              ShowToastDialog.closeLoader();
-                              if (userExit == true) {
-                                UserModel? userModel =
-                                    await FireStoreUtils.getUserProfile(
-                                        value.user!.uid);
-                                if (userModel != null) {
-                                  if (userModel.isActive == true) {
-                                    Get.offAll(const DashBoardScreen());
-                                  } else {
-                                    await FirebaseAuth.instance.signOut();
-                                    ShowToastDialog.showToast(
-                                        "This user is disable please contact administrator"
-                                            .tr);
-                                  }
-                                }
-                              } else {
-                                UserModel userModel = UserModel();
-                                userModel.id = value.user!.uid;
-                                userModel.countryCode =
-                                    controller.countryCode.value;
-                                userModel.phoneNumber =
-                                    controller.phoneNumber.value;
-                                userModel.loginType = Constant.phoneLoginType;
-
-                                Get.to(const InformationScreen(), arguments: {
-                                  "userModel": userModel,
-                                });
-                              }
-                            });
-                          }
-                        }).catchError((error) {
-                          ShowToastDialog.closeLoader();
-                          ShowToastDialog.showToast("Code is Invalid".tr);
-                        });
-                      } else {
-                        ShowToastDialog.showToast("Please Enter Valid OTP".tr);
-                      }
-
-                      // print(controller.countryCode.value);
-                      // print(controller.phoneNumberController.value.text);
+                    
                     },
                   ),
                 )),
           );
-        });
+        
   }
 }

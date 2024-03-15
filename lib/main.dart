@@ -1,6 +1,4 @@
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:customer/controller/global_setting_conroller.dart';
-import 'package:flutter_automation/flutter_automation.dart';
 import 'package:customer/services/localization_service.dart';
 import 'package:customer/themes/Styles.dart';
 import 'package:customer/ui/splash_screen.dart';
@@ -72,11 +70,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             fallbackLocale: LocalizationService.locale,
             translations: LocalizationService(),
             builder: EasyLoading.init(),
-            home: GetBuilder<GlobalSettingController>(
-                init: GlobalSettingController(),
-                builder: (context) {
-                  return const SplashScreen();
-                }));
+            home: const SplashScreen());
       }),
     );
   }

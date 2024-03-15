@@ -8,14 +8,12 @@ import 'package:customer/model/sos_model.dart';
 import 'package:customer/model/user_model.dart';
 import 'package:customer/themes/app_colors.dart';
 import 'package:customer/themes/button_them.dart';
-import 'package:customer/themes/responsive.dart';
 import 'package:customer/ui/chat_screen/chat_screen.dart';
 import 'package:customer/ui/orders/complete_order_screen.dart';
 import 'package:customer/ui/orders/live_tracking_screen.dart';
 import 'package:customer/ui/orders/order_details_screen.dart';
 import 'package:customer/ui/orders/payment_order_screen.dart';
 import 'package:customer/ui/review/review_screen.dart';
-import 'package:customer/utils/DarkThemeProvider.dart';
 import 'package:customer/utils/fire_store_utils.dart';
 import 'package:customer/utils/utils.dart';
 import 'package:customer/widget/driver_view.dart';
@@ -24,14 +22,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -247,7 +243,7 @@ class OrderScreen extends StatelessWidget {
                                                           ? Padding(
                                                               padding:
                                                                   const EdgeInsets
-                                                                          .symmetric(
+                                                                      .symmetric(
                                                                       vertical:
                                                                           10),
                                                               child: DriverView(
@@ -281,16 +277,16 @@ class OrderScreen extends StatelessWidget {
                                                       Padding(
                                                         padding:
                                                             const EdgeInsets
-                                                                    .symmetric(
+                                                                .symmetric(
                                                                 vertical: 24),
                                                         child: Container(
                                                           decoration:
                                                               ShapeDecoration(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFFF4F4F4),
                                                             shape:
                                                                 RoundedRectangleBorder(
-                                                              side: BorderSide(
+                                                              side: const BorderSide(
                                                                   color: Colors
                                                                       .black,
                                                                   width: 1),
@@ -301,11 +297,13 @@ class OrderScreen extends StatelessWidget {
                                                             ),
                                                           ),
                                                           child: Padding(
-                                                              padding: const EdgeInsets
+                                                              padding:
+                                                                  const EdgeInsets
                                                                       .symmetric(
-                                                                  horizontal:
-                                                                      10,
-                                                                  vertical: 10),
+                                                                      horizontal:
+                                                                          10,
+                                                                      vertical:
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
@@ -428,7 +426,7 @@ class OrderScreen extends StatelessWidget {
                                                                             .primary,
                                                                         borderRadius:
                                                                             BorderRadius.circular(5)),
-                                                                    child: Icon(
+                                                                    child: const Icon(
                                                                         Icons
                                                                             .chat,
                                                                         color: Colors
@@ -459,7 +457,7 @@ class OrderScreen extends StatelessWidget {
                                                                             .primary,
                                                                         borderRadius:
                                                                             BorderRadius.circular(5)),
-                                                                    child: Icon(
+                                                                    child: const Icon(
                                                                         Icons
                                                                             .call,
                                                                         color: Colors
@@ -564,7 +562,6 @@ class OrderScreen extends StatelessWidget {
                               builder: (BuildContext context,
                                   AsyncSnapshot<QuerySnapshot> snapshot) {
                                 if (snapshot.hasError) {
-                                  print(snapshot.error.toString());
                                   return Center(
                                       child: Text('Something went wrong'.tr));
                                 }
@@ -673,16 +670,16 @@ class OrderScreen extends StatelessWidget {
                                                         Padding(
                                                           padding:
                                                               const EdgeInsets
-                                                                      .symmetric(
+                                                                  .symmetric(
                                                                   vertical: 24),
                                                           child: Container(
                                                             decoration:
                                                                 ShapeDecoration(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFFF4F4F4),
                                                               shape:
                                                                   RoundedRectangleBorder(
-                                                                side: BorderSide(
+                                                                side: const BorderSide(
                                                                     color: Colors
                                                                         .black,
                                                                     width: 1),
@@ -694,7 +691,7 @@ class OrderScreen extends StatelessWidget {
                                                             ),
                                                             child: Padding(
                                                                 padding: const EdgeInsets
-                                                                        .symmetric(
+                                                                    .symmetric(
                                                                     horizontal:
                                                                         10,
                                                                     vertical:
@@ -759,7 +756,6 @@ class OrderScreen extends StatelessWidget {
                               builder: (BuildContext context,
                                   AsyncSnapshot<QuerySnapshot> snapshot) {
                                 if (snapshot.hasError) {
-                                  print(snapshot.error.toString());
                                   return Center(
                                       child: Text('Something went wrong'.tr));
                                 }
@@ -878,7 +874,7 @@ class OrderScreen extends StatelessWidget {
                                                     ),
                                                     Padding(
                                                       padding: const EdgeInsets
-                                                              .symmetric(
+                                                          .symmetric(
                                                           vertical: 24),
                                                       child: Container(
                                                         decoration:
@@ -900,7 +896,7 @@ class OrderScreen extends StatelessWidget {
                                                         child: Padding(
                                                             padding:
                                                                 const EdgeInsets
-                                                                        .symmetric(
+                                                                    .symmetric(
                                                                     horizontal:
                                                                         10,
                                                                     vertical:

@@ -1,36 +1,22 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:customer/constant/constant.dart';
-import 'package:customer/constant/show_toast_dialog.dart';
-import 'package:customer/controller/login_controller.dart';
-import 'package:customer/model/user_model.dart';
 import 'package:customer/themes/app_colors.dart';
 import 'package:customer/themes/button_them.dart';
 import 'package:customer/themes/responsive.dart';
-import 'package:customer/ui/auth_screen/information_screen.dart';
-import 'package:customer/ui/dashboard_screen.dart';
 import 'package:customer/ui/terms_and_condition/terms_and_condition_screen.dart';
-import 'package:customer/utils/DarkThemeProvider.dart';
-import 'package:customer/utils/fire_store_utils.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
-    return GetX<LoginController>(
-        init: LoginController(),
-        builder: (controller) {
-          return SafeArea(
+  
+     return SafeArea(
             child: Scaffold(
               body: SingleChildScrollView(
                 child: Column(
@@ -89,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                               keyboardType: TextInputType.number,
                               textCapitalization: TextCapitalization.sentences,
                               controller:
-                                  controller.phoneNumberController.value,
+                                 TextEditingController(),
                               textAlign: TextAlign.start,
                               style: GoogleFonts.poppins(color: Colors.black),
                               decoration: InputDecoration(
@@ -101,12 +87,11 @@ class LoginScreen extends StatelessWidget {
                                   prefixIcon: CountryCodePicker(
                                     enabled: false,
                                     onChanged: (value) {
-                                      controller.countryCode.value =
-                                          value.dialCode.toString();
+                                      
                                     },
                                     dialogBackgroundColor: AppColors.background,
-                                    initialSelection:
-                                        controller.countryCode.value,
+                                    // initialSelection:
+                                    //     'NGN',
                                     comparator: (a, b) =>
                                         b.name!.compareTo(a.name.toString()),
                                     flagDecoration: const BoxDecoration(
@@ -135,15 +120,15 @@ class LoginScreen extends StatelessWidget {
                                         color: AppColors.darkTextFieldBorder,
                                         width: 1),
                                   ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderRadius: const BorderRadius.all(
+                                  errorBorder: const OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
                                         Radius.circular(12)),
                                     borderSide: BorderSide(
                                         color: AppColors.darkTextFieldBorder,
                                         width: 1),
                                   ),
-                                  border: OutlineInputBorder(
-                                    borderRadius: const BorderRadius.all(
+                                  border: const OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
                                         Radius.circular(12)),
                                     borderSide: BorderSide(
                                         color: AppColors.darkTextFieldBorder,
@@ -158,7 +143,7 @@ class LoginScreen extends StatelessWidget {
                             title: "Next".tr,
                             txtSize: 14,
                             onPress: () {
-                              controller.sendCode();
+                             
                             },
                           ),
                           Padding(
@@ -195,67 +180,7 @@ class LoginScreen extends StatelessWidget {
                             iconAssetImage: 'assets/icons/ic_google.png',
                             borderRadius: 100,
                             onPress: () async {
-                              ShowToastDialog.showLoader("Please wait".tr);
-                              await controller.signInWithGoogle().then((value) {
-                                ShowToastDialog.closeLoader();
-                                if (value != null) {
-                                  if (value.additionalUserInfo!.isNewUser) {
-                                    print("----->new user");
-                                    UserModel userModel = UserModel();
-                                    userModel.id = value.user!.uid;
-                                    userModel.email = value.user!.email;
-                                    userModel.fullName =
-                                        value.user!.displayName;
-                                    userModel.profilePic = value.user!.photoURL;
-                                    userModel.loginType =
-                                        Constant.googleLoginType;
-
-                                    ShowToastDialog.closeLoader();
-                                    Get.to(const InformationScreen(),
-                                        arguments: {
-                                          "userModel": userModel,
-                                        });
-                                  } else {
-                                    print("----->old user");
-                                    FireStoreUtils.userExitOrNot(
-                                            value.user!.uid)
-                                        .then((userExit) async {
-                                      ShowToastDialog.closeLoader();
-                                      if (userExit == true) {
-                                        UserModel? userModel =
-                                            await FireStoreUtils.getUserProfile(
-                                                value.user!.uid);
-                                        if (userModel != null) {
-                                          if (userModel.isActive == true) {
-                                            Get.offAll(const DashBoardScreen());
-                                          } else {
-                                            await FirebaseAuth.instance
-                                                .signOut();
-                                            ShowToastDialog.showToast(
-                                                "This user is disable please contact administrator"
-                                                    .tr);
-                                          }
-                                        }
-                                      } else {
-                                        UserModel userModel = UserModel();
-                                        userModel.id = value.user!.uid;
-                                        userModel.email = value.user!.email;
-                                        userModel.fullName =
-                                            value.user!.displayName;
-                                        userModel.profilePic =
-                                            value.user!.photoURL;
-                                        userModel.loginType =
-                                            Constant.googleLoginType;
-
-                                        Get.to(const InformationScreen(),
-                                            arguments: {
-                                              "userModel": userModel,
-                                            });
-                                      }
-                                    });
-                                  }
-                                }
-                              });
+                             
                             },
                           ),
                           const SizedBox(
@@ -270,69 +195,7 @@ class LoginScreen extends StatelessWidget {
                                 txtSize: 16,
                                 iconAssetImage: 'assets/icons/applelogo.png',
                                 onPress: () async {
-                                  ShowToastDialog.showLoader("Please wait".tr);
-                                  await controller
-                                      .signInWithApple()
-                                      .then((value) {
-                                    ShowToastDialog.closeLoader();
-                                    if (value != null) {
-                                      if (value.additionalUserInfo!.isNewUser) {
-                                        log("----->new user");
-                                        UserModel userModel = UserModel();
-                                        userModel.id = value.user!.uid;
-                                        userModel.email = value.user!.email;
-                                        userModel.profilePic =
-                                            value.user!.photoURL;
-                                        userModel.loginType =
-                                            Constant.appleLoginType;
-
-                                        ShowToastDialog.closeLoader();
-                                        Get.to(const InformationScreen(),
-                                            arguments: {
-                                              "userModel": userModel,
-                                            });
-                                      } else {
-                                        print("----->old user");
-                                        FireStoreUtils.userExitOrNot(
-                                                value.user!.uid)
-                                            .then((userExit) async {
-                                          ShowToastDialog.closeLoader();
-
-                                          if (userExit == true) {
-                                            UserModel? userModel =
-                                                await FireStoreUtils
-                                                    .getUserProfile(
-                                                        value.user!.uid);
-                                            if (userModel != null) {
-                                              if (userModel.isActive == true) {
-                                                Get.offAll(
-                                                    const DashBoardScreen());
-                                              } else {
-                                                await FirebaseAuth.instance
-                                                    .signOut();
-                                                ShowToastDialog.showToast(
-                                                    "This user is disable please contact administrator"
-                                                        .tr);
-                                              }
-                                            }
-                                          } else {
-                                            UserModel userModel = UserModel();
-                                            userModel.id = value.user!.uid;
-                                            userModel.email = value.user!.email;
-                                            userModel.profilePic =
-                                                value.user!.photoURL;
-                                            userModel.loginType =
-                                                Constant.googleLoginType;
-
-                                            Get.to(const InformationScreen(),
-                                                arguments: {
-                                                  "userModel": userModel,
-                                                });
-                                          }
-                                        });
-                                      }
-                                    }
-                                  });
+                                
                                 },
                               )),
                         ],
@@ -377,6 +240,6 @@ class LoginScreen extends StatelessWidget {
                   )),
             ),
           );
-        });
+        
   }
 }

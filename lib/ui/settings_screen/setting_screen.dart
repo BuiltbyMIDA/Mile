@@ -24,310 +24,177 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
-    return GetBuilder<SettingController>(
-        init: SettingController(),
-        builder: (controller) {
-          return Scaffold(
-            backgroundColor: Colors.white,
-            body: controller.isLoading.value
-                ? Constant.loader()
-                : Column(
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Column(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
                             children: [
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Row(
-                                        children: [
-                                          SvgPicture.asset(
-                                              'assets/icons/ic_language.svg',
-                                              color: const Color(0xFF1C1B1F),
-                                              width: 18),
-                                          const SizedBox(
-                                            width: 20,
-                                          ),
-                                          Expanded(
-                                            child: Text(
-                                              "Language".tr,
-                                              style: const TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontFamily: 'Instrument Sans',
-                                                fontWeight: FontWeight.w600,
-                                                letterSpacing: -0.20,
-                                              ),
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            width:
-                                                Responsive.width(26, context),
-                                            child: DropdownButtonFormField(
-                                                isExpanded: true,
-                                                decoration:
-                                                    const InputDecoration(
-                                                  contentPadding:
-                                                      EdgeInsets.symmetric(
-                                                          vertical: 1),
-                                                  disabledBorder:
-                                                      InputBorder.none,
-                                                  focusedBorder:
-                                                      InputBorder.none,
-                                                  enabledBorder:
-                                                      InputBorder.none,
-                                                  errorBorder: InputBorder.none,
-                                                  border: InputBorder.none,
-                                                  isDense: true,
-                                                ),
-                                                value: controller
-                                                            .selectedLanguage
-                                                            .value
-                                                            .id ==
-                                                        null
-                                                    ? null
-                                                    : controller
-                                                        .selectedLanguage.value,
-                                                onChanged: (value) {
-                                                  controller.selectedLanguage
-                                                      .value = value!;
-
-                                                  LocalizationService()
-                                                      .changeLocale(value.code
-                                                          .toString());
-                                                  Preferences.setString(
-                                                      Preferences
-                                                          .languageCodeKey,
-                                                      jsonEncode(controller
-                                                          .selectedLanguage
-                                                          .value));
-                                                },
-                                                hint: Text("select".tr),
-                                                items: controller.languageList
-                                                    .map((item) {
-                                                  print(item.toJson());
-                                                  return DropdownMenuItem(
-                                                    value: item,
-                                                    child: Text(
-                                                        item.name.toString(),
-                                                        style:
-                                                            GoogleFonts.poppins(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500)),
-                                                  );
-                                                }).toList()),
-                                          ),
-                                        ],
-                                      ),
+                              SizedBox(
+                                width: Responsive.width(26, context),
+                                child: DropdownButtonFormField<String>(
+                                    isExpanded: true,
+                                    decoration: const InputDecoration(
+                                      contentPadding:
+                                          EdgeInsets.symmetric(vertical: 1),
+                                      disabledBorder: InputBorder.none,
+                                      focusedBorder: InputBorder.none,
+                                      enabledBorder: InputBorder.none,
+                                      errorBorder: InputBorder.none,
+                                      border: InputBorder.none,
+                                      isDense: true,
                                     ),
-                                    const Divider(),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Row(
-                                        children: [
-                                          SvgPicture.asset(
-                                              'assets/icons/ic_light_drak.svg',
-                                              color: const Color(0xFF1C1B1F),
-                                              width: 18),
-                                          const SizedBox(
-                                            width: 20,
-                                          ),
-                                          Expanded(
-                                              child: Text(
-                                            "Light/dark mod".tr,
-                                            style: const TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 16,
-                                              fontFamily: 'Instrument Sans',
-                                              fontWeight: FontWeight.w600,
-                                              letterSpacing: -0.20,
-                                            ),
-                                          )),
-                                          SizedBox(
-                                            width:
-                                                Responsive.width(26, context),
-                                            child: DropdownButtonFormField<
-                                                    String>(
-                                                isExpanded: true,
-                                                decoration:
-                                                    const InputDecoration(
-                                                  contentPadding:
-                                                      EdgeInsets.symmetric(
-                                                          vertical: 1),
-                                                  disabledBorder:
-                                                      InputBorder.none,
-                                                  focusedBorder:
-                                                      InputBorder.none,
-                                                  enabledBorder:
-                                                      InputBorder.none,
-                                                  errorBorder: InputBorder.none,
-                                                  border: InputBorder.none,
-                                                  isDense: true,
-                                                ),
-                                                validator: (value) =>
-                                                    value == null
-                                                        ? 'field required'
-                                                        : null,
-                                                value: controller
-                                                        .selectedMode.isEmpty
-                                                    ? null
-                                                    : controller
-                                                        .selectedMode.value,
-                                                onChanged: (value) {
-                                                  controller.selectedMode
-                                                      .value = value!;
-                                                  Preferences.setString(
-                                                      Preferences.themKey,
-                                                      value.toString());
-                                                  if (controller
-                                                          .selectedMode.value ==
-                                                      "Dark mode") {
-                                                    themeChange.darkTheme = 0;
-                                                  } else if (controller
-                                                          .selectedMode.value ==
-                                                      "Light mode") {
-                                                    themeChange.darkTheme = 1;
-                                                  } else {
-                                                    themeChange.darkTheme = 2;
-                                                  }
-                                                },
-                                                hint: Text("select".tr),
-                                                items: controller.modeList
-                                                    .map((item) {
-                                                  return DropdownMenuItem(
-                                                    value: item,
-                                                    child: Text(item.toString(),
-                                                        style:
-                                                            GoogleFonts.poppins(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500)),
-                                                  );
-                                                }).toList()),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    const Divider(),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: InkWell(
-                                        onTap: () async {
-                                          final Uri url = Uri.parse(
-                                              Constant.supportURL.toString());
-                                          if (!await launchUrl(url)) {
-                                            throw Exception(
-                                                'Could not launch ${Constant.supportURL.toString()}'
-                                                    .tr);
-                                          }
-                                        },
-                                        child: Row(
-                                          children: [
-                                            SvgPicture.asset(
-                                                'assets/icons/ic_support.svg',
-                                                color: const Color(0xFF1C1B1F),
-                                                width: 18),
-                                            const SizedBox(
-                                              width: 20,
-                                            ),
-                                            Text(
-                                              "Support".tr,
-                                              style: const TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontFamily: 'Instrument Sans',
-                                                fontWeight: FontWeight.w600,
-                                                letterSpacing: -0.20,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    const Divider(),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: InkWell(
-                                        onTap: () async {
-                                          Get.to(() => const ProfileScreen());
-                                        },
-                                        child: Row(
-                                          children: [
-                                            SvgPicture.asset(
-                                                'assets/icons/ic_person.svg',
-                                                color: const Color(0xFF1C1B1F),
-                                                width: 18),
-                                            const SizedBox(
-                                              width: 20,
-                                            ),
-                                            Text(
-                                              'Account Settings'.tr,
-                                              style: const TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontFamily: 'Instrument Sans',
-                                                fontWeight: FontWeight.w600,
-                                                letterSpacing: -0.20,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    const Divider(),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: InkWell(
-                                        onTap: () {
-                                          showAlertDialog(context);
-                                        },
-                                        child: Row(
-                                          children: [
-                                            SvgPicture.asset(
-                                              'assets/icons/ic_delete.svg',
-                                              color: const Color(0xFF1C1B1F),
-                                              width: 18,
-                                              height: 18,
-                                            ),
-                                            const SizedBox(
-                                              width: 20,
-                                            ),
-                                            Text(
-                                              "Delete Account".tr,
-                                              style: const TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontFamily: 'Instrument Sans',
-                                                fontWeight: FontWeight.w600,
-                                                letterSpacing: -0.20,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 120),
-                                      child:
-                                          Text("V ${Constant.appVersion}".tr),
-                                    )
-                                  ],
-                                ),
+                                    validator: (value) =>
+                                        value == null ? 'field required' : null,
+                                    value: controller.selectedMode.isEmpty
+                                        ? null
+                                        : controller.selectedMode.value,
+                                    onChanged: (value) {
+                                      controller.selectedMode.value = value!;
+                                      Preferences.setString(Preferences.themKey,
+                                          value.toString());
+                                      if (controller.selectedMode.value ==
+                                          "Dark mode") {
+                                        themeChange.darkTheme = 0;
+                                      } else if (controller
+                                              .selectedMode.value ==
+                                          "Light mode") {
+                                        themeChange.darkTheme = 1;
+                                      } else {
+                                        themeChange.darkTheme = 2;
+                                      }
+                                    },
+                                    hint: Text("select".tr),
+                                    items: controller.modeList.map((item) {
+                                      return DropdownMenuItem(
+                                        value: item,
+                                        child: Text(item.toString(),
+                                            style: GoogleFonts.poppins(
+                                                fontWeight: FontWeight.w500)),
+                                      );
+                                    }).toList()),
                               ),
                             ],
                           ),
                         ),
-                      ),
-                    ],
+                        const Divider(),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: InkWell(
+                            onTap: () async {
+                              final Uri url =
+                                  Uri.parse(Constant.supportURL.toString());
+                              if (!await launchUrl(url)) {
+                                throw Exception(
+                                    'Could not launch ${Constant.supportURL.toString()}'
+                                        .tr);
+                              }
+                            },
+                            child: Row(
+                              children: [
+                                SvgPicture.asset('assets/icons/ic_support.svg',
+                                    color: const Color(0xFF1C1B1F), width: 18),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                Text(
+                                  "Support".tr,
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontFamily: 'Instrument Sans',
+                                    fontWeight: FontWeight.w600,
+                                    letterSpacing: -0.20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Divider(),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: InkWell(
+                            onTap: () async {
+                              Get.to(() => const ProfileScreen());
+                            },
+                            child: Row(
+                              children: [
+                                SvgPicture.asset('assets/icons/ic_person.svg',
+                                    color: const Color(0xFF1C1B1F), width: 18),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                Text(
+                                  'Account Settings'.tr,
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontFamily: 'Instrument Sans',
+                                    fontWeight: FontWeight.w600,
+                                    letterSpacing: -0.20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Divider(),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: InkWell(
+                            onTap: () {
+                              showAlertDialog(context);
+                            },
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/icons/ic_delete.svg',
+                                  color: const Color(0xFF1C1B1F),
+                                  width: 18,
+                                  height: 18,
+                                ),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                Text(
+                                  "Delete Account".tr,
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontFamily: 'Instrument Sans',
+                                    fontWeight: FontWeight.w600,
+                                    letterSpacing: -0.20,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 120),
+                          child: Text("V ${Constant.appVersion}".tr),
+                        )
+                      ],
+                    ),
                   ),
-          );
-        });
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   showAlertDialog(BuildContext context) {

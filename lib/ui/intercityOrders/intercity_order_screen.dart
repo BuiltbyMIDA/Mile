@@ -15,7 +15,6 @@ import 'package:customer/ui/intercityOrders/intercity_complete_order_screen.dart
 import 'package:customer/ui/intercityOrders/intercity_payment_order_screen.dart';
 import 'package:customer/ui/orders/live_tracking_screen.dart';
 import 'package:customer/ui/review/review_screen.dart';
-import 'package:customer/utils/DarkThemeProvider.dart';
 import 'package:customer/utils/fire_store_utils.dart';
 import 'package:customer/utils/utils.dart';
 import 'package:customer/widget/driver_view.dart';
@@ -24,14 +23,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class InterCityOrderScreen extends StatelessWidget {
   const InterCityOrderScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+
 
     return Scaffold(
       backgroundColor:  AppColors.primary,

@@ -1,9 +1,6 @@
-import 'package:customer/themes/app_colors.dart';
 import 'package:customer/themes/responsive.dart';
-import 'package:customer/utils/DarkThemeProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class ButtonThem {
   const ButtonThem({Key? key});
@@ -19,7 +16,7 @@ class ButtonThem {
     bool isVisible = true,
     Color? color,
   }) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+  
 
     return Visibility(
       visible: isVisible,
@@ -56,7 +53,7 @@ class ButtonThem {
     bool iconVisibility = false,
     String iconAssetImage = '',
   }) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+  
 
     return Visibility(
       visible: isVisible,

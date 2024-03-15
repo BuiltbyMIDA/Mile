@@ -12,7 +12,6 @@ import 'package:customer/model/inbox_model.dart';
 import 'package:customer/themes/app_colors.dart';
 import 'package:customer/ui/chat_screen/FullScreenImageViewer.dart';
 import 'package:customer/ui/chat_screen/FullScreenVideoViewer.dart';
-import 'package:customer/utils/DarkThemeProvider.dart';
 import 'package:customer/utils/fire_store_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,6 @@ import 'package:flutterflow_paginate_firestore/paginate_firestore.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 class ChatScreens extends StatefulWidget {
@@ -65,8 +63,7 @@ class _ChatScreensState extends State<ChatScreens> {
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
-
+ 
     return Scaffold(
       appBar: AppBar(
         elevation: 2,
@@ -133,40 +130,30 @@ class _ChatScreensState extends State<ChatScreens> {
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.only(left: 10),
                       filled: true,
-                      disabledBorder: OutlineInputBorder(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(30)),
+                      disabledBorder: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
                         borderSide: BorderSide(
-                            color:  AppColors.textFieldBorder,
-                            width: 1),
+                            color: AppColors.textFieldBorder, width: 1),
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(30)),
-                        borderSide: BorderSide(
-                            color:  AppColors.primary,
-                            width: 1),
+                      focusedBorder: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                        borderSide:
+                            BorderSide(color: AppColors.primary, width: 1),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(30)),
+                      enabledBorder: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
                         borderSide: BorderSide(
-                            color:AppColors.textFieldBorder,
-                            width: 1),
+                            color: AppColors.textFieldBorder, width: 1),
                       ),
-                      errorBorder: OutlineInputBorder(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(30)),
+                      errorBorder: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
                         borderSide: BorderSide(
-                            color:AppColors.textFieldBorder,
-                            width: 1),
+                            color: AppColors.textFieldBorder, width: 1),
                       ),
-                      border: OutlineInputBorder(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(30)),
+                      border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
                         borderSide: BorderSide(
-                            color:  AppColors.textFieldBorder,
-                            width: 1),
+                            color: AppColors.textFieldBorder, width: 1),
                       ),
                       suffixIcon: IconButton(
                         onPressed: () async {
@@ -211,8 +198,6 @@ class _ChatScreensState extends State<ChatScreens> {
   }
 
   Widget chatItemView(bool isMe, ConversationModel data) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
-
     return Container(
       padding: const EdgeInsets.only(left: 14, right: 14, top: 10, bottom: 10),
       child: isMe
@@ -223,9 +208,9 @@ class _ChatScreensState extends State<ChatScreens> {
                 children: [
                   data.messageType == "text"
                       ? Container(
-                          decoration: BoxDecoration(
-                            color:  AppColors.primary,
-                            borderRadius: const BorderRadius.only(
+                          decoration: const BoxDecoration(
+                            color: AppColors.primary,
+                            borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),
                                 topRight: Radius.circular(10),
                                 bottomLeft: Radius.circular(10)),
@@ -237,7 +222,7 @@ class _ChatScreensState extends State<ChatScreens> {
                             style: TextStyle(
                                 color: data.senderId ==
                                         FireStoreUtils.getCurrentUid()
-                                    ?  Colors.white
+                                    ? Colors.white
                                     : Colors.black),
                           ),
                         )
@@ -534,4 +519,5 @@ class _ChatScreensState extends State<ChatScreens> {
     );
     showCupertinoModalPopup(context: context, builder: (context) => action);
   }
+
 }

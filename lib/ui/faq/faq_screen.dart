@@ -2,19 +2,17 @@ import 'package:customer/constant/constant.dart';
 import 'package:customer/model/faq_model.dart';
 import 'package:customer/themes/app_colors.dart';
 import 'package:customer/themes/responsive.dart';
-import 'package:customer/utils/DarkThemeProvider.dart';
 import 'package:customer/utils/fire_store_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class FaqScreen extends StatelessWidget {
   const FaqScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+  
 
     return Scaffold(
       backgroundColor: AppColors.primary,

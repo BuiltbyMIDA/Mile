@@ -1,33 +1,24 @@
-import 'dart:developer';
-
 import 'package:clipboard/clipboard.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:customer/constant/collection_name.dart';
 import 'package:customer/constant/constant.dart';
 import 'package:customer/constant/show_toast_dialog.dart';
-import 'package:customer/controller/coupon_controller.dart';
 import 'package:customer/model/coupon_model.dart';
 import 'package:customer/themes/app_colors.dart';
 import 'package:customer/themes/button_them.dart';
 import 'package:customer/themes/responsive.dart';
-import 'package:customer/utils/DarkThemeProvider.dart';
 import 'package:customer/utils/fire_store_utils.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class CouponScreen extends StatelessWidget {
   const CouponScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
-    return GetBuilder<CouponController>(
-        init: CouponController(),
-        builder: (controller) {
+   
+
           return Scaffold(
               appBar: AppBar(
                 backgroundColor: AppColors.primary,
@@ -197,7 +188,7 @@ class CouponScreen extends StatelessWidget {
                                     child: Padding(
                                         padding: const EdgeInsets.all(4.0),
                                         child: TextFormField(
-                                          controller: controller.couponController.value,
+                                          controller: TextEditingController(),
                                           textAlign: TextAlign.center,
                                           decoration:  InputDecoration(hintText: "Write coupon code".tr, border: InputBorder.none),
                                         )),
@@ -210,22 +201,7 @@ class CouponScreen extends StatelessWidget {
                                     title: "Apply".tr,
                                     btnWidthRatio: Responsive.width(100, context),
                                     onPress: () async {
-                                      if (controller.couponController.value.text.isNotEmpty) {
-                                        ShowToastDialog.showLoader("Please wait".tr);
-                                        await FireStoreUtils.fireStore.collection(CollectionName.coupon).where('code', isEqualTo: controller.couponController.value.text).where('enable', isEqualTo: true).where('validity',isGreaterThanOrEqualTo: Timestamp.now()).get().then((value) {
-                                          ShowToastDialog.closeLoader();
-                                          if (value.docs.isNotEmpty) {
-                                            CouponModel couponModel = CouponModel.fromJson(value.docs.first.data());
-                                            Get.back(result: couponModel);
-                                          }else{
-                                            ShowToastDialog.showToast("Coupon code is Invalid".tr);
-                                          }
-                                        }).catchError((error) {
-                                          log(error.toString());
-                                        });
-                                      } else {
-                                        ShowToastDialog.showToast("Please Enter coupon code".tr);
-                                      }
+                                    
                                     },
                                   ),
                                 ],
@@ -238,6 +214,6 @@ class CouponScreen extends StatelessWidget {
                   ),
                 ],
               ));
-        });
+      
   }
 }

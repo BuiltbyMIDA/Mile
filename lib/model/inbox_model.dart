@@ -49,7 +49,6 @@ class InboxModel {
       'orderId': orderId,
       'driverId': driverId,
       'driverName': driverName,
-      'driverName': driverName,
       'driverProfileImage': driverProfileImage,
       'lastSenderId': lastSenderId,
       'createdAt': createdAt,
