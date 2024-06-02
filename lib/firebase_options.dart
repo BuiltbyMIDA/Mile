@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -30,17 +27,17 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+              'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+              'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+              'you can reconfigure this by running the FlutterFire CLI again.',
         );
       default:
         throw UnsupportedError(
@@ -50,23 +47,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBBnFN5CNfkFn1n6TUzXgE8oCquOhRr3a4',
-    appId: '1:1089834042923:android:89f27454b8cabfa3fb4c6e',
-    messagingSenderId: '1089834042923',
-    projectId: 'miles-b6fcd',
-    databaseURL: 'https://miles-b6fcd-default-rtdb.firebaseio.com',
-    storageBucket: 'miles-b6fcd.appspot.com',
+    apiKey: 'AIzaSyCGdRCnDwO7rEWlc29koqqI3hCg3-zqCng',
+    appId: '1:581288455500:android:298f9328e79daaae07f3e9',
+    messagingSenderId: '581288455500',
+    projectId: 'mile-e1045',
+    storageBucket: 'mile-e1045.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCjjQ-IAovGY8gDAkEIJ7_YGcC57kq9kX0',
-    appId: '1:1089834042923:ios:ac0dd9f4559b2f0dfb4c6e',
-    messagingSenderId: '1089834042923',
-    projectId: 'miles-b6fcd',
-    databaseURL: 'https://miles-b6fcd-default-rtdb.firebaseio.com',
-    storageBucket: 'miles-b6fcd.appspot.com',
-    androidClientId: '1089834042923-2sk1c6h27qr2ahg41p2k0u9qq0ieop5j.apps.googleusercontent.com',
-    iosClientId: '1089834042923-6q0gqd7guusb6vrps8t2ve1st2bqv497.apps.googleusercontent.com',
-    iosBundleId: 'com.mile.rider',
+    apiKey: 'AIzaSyDzJvoEu7EeF0lBrquiaua7tX0EMGC1uNQ',
+    appId: '1:581288455500:ios:9cb89308f2a7656f07f3e9',
+    messagingSenderId: '581288455500',
+    projectId: 'mile-e1045',
+    storageBucket: 'mile-e1045.appspot.com',
+    iosBundleId: 'com.mileapp.driver',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBbznMLNkY4hTv-4alvKYco88BsWL-_eKw',
+    appId: '1:581288455500:web:412f12c1c553218807f3e9',
+    messagingSenderId: '581288455500',
+    projectId: 'mile-e1045',
+    authDomain: 'mile-e1045.firebaseapp.com',
+    storageBucket: 'mile-e1045.appspot.com',
+    measurementId: 'G-XK8119ERNG',
+  );
+
 }

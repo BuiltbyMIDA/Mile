@@ -98,7 +98,7 @@ class NewOrderInterCityScreen extends StatelessWidget {
                                       controller.whenController.value.text = string;
                                     },
                                     minDateTime: DateTime.now(),
-                                    buttonAlignement: MainAxisAlignment.center,
+                                    // buttonAlignement: MainAxisAlignment.center,
                                     displayButtonIcon: false,
                                     displaySubmitButton: true,
                                     title: '',
@@ -428,7 +428,7 @@ class NewOrderInterCityScreen extends StatelessWidget {
                                   controller.suggestedTimeController.value.text = string;
                                 },
                                 minDateTime: DateTime.now(),
-                                buttonAlignement: MainAxisAlignment.center,
+                                // buttonAlignement: MainAxisAlignment.center,
                                 displayButtonIcon: false,
                                 displaySubmitButton: true,
                                 title: '',
