@@ -895,42 +895,42 @@ PODS:
   - sqflite (0.0.3):
     - Flutter
     - FMDB (>= 2.7.5)
-  - Stripe (23.12.0):
-    - StripeApplePay (= 23.12.0)
-    - StripeCore (= 23.12.0)
-    - StripePayments (= 23.12.0)
-    - StripePaymentsUI (= 23.12.0)
-    - StripeUICore (= 23.12.0)
+  - Stripe (23.18.3):
+    - StripeApplePay (= 23.18.3)
+    - StripeCore (= 23.18.3)
+    - StripePayments (= 23.18.3)
+    - StripePaymentsUI (= 23.18.3)
+    - StripeUICore (= 23.18.3)
   - stripe_ios (0.0.1):
     - Flutter
-    - Stripe (~> 23.12.0)
-    - StripeApplePay (~> 23.12.0)
-    - StripeFinancialConnections (~> 23.12.0)
-    - StripePayments (~> 23.12.0)
-    - StripePaymentSheet (~> 23.12.0)
-    - StripePaymentsUI (~> 23.12.0)
-  - StripeApplePay (23.12.0):
-    - StripeCore (= 23.12.0)
-  - StripeCore (23.12.0)
-  - StripeFinancialConnections (23.12.0):
-    - StripeCore (= 23.12.0)
-    - StripeUICore (= 23.12.0)
-  - StripePayments (23.12.0):
-    - StripeCore (= 23.12.0)
-    - StripePayments/Stripe3DS2 (= 23.12.0)
-  - StripePayments/Stripe3DS2 (23.12.0):
-    - StripeCore (= 23.12.0)
-  - StripePaymentSheet (23.12.0):
-    - StripeApplePay (= 23.12.0)
-    - StripeCore (= 23.12.0)
-    - StripePayments (= 23.12.0)
-    - StripePaymentsUI (= 23.12.0)
-  - StripePaymentsUI (23.12.0):
-    - StripeCore (= 23.12.0)
-    - StripePayments (= 23.12.0)
-    - StripeUICore (= 23.12.0)
-  - StripeUICore (23.12.0):
-    - StripeCore (= 23.12.0)
+    - Stripe (~> 23.18.0)
+    - StripeApplePay (~> 23.18.0)
+    - StripeFinancialConnections (~> 23.18.0)
+    - StripePayments (~> 23.18.0)
+    - StripePaymentSheet (~> 23.18.0)
+    - StripePaymentsUI (~> 23.18.0)
+  - StripeApplePay (23.18.3):
+    - StripeCore (= 23.18.3)
+  - StripeCore (23.18.3)
+  - StripeFinancialConnections (23.18.3):
+    - StripeCore (= 23.18.3)
+    - StripeUICore (= 23.18.3)
+  - StripePayments (23.18.3):
+    - StripeCore (= 23.18.3)
+    - StripePayments/Stripe3DS2 (= 23.18.3)
+  - StripePayments/Stripe3DS2 (23.18.3):
+    - StripeCore (= 23.18.3)
+  - StripePaymentSheet (23.18.3):
+    - StripeApplePay (= 23.18.3)
+    - StripeCore (= 23.18.3)
+    - StripePayments (= 23.18.3)
+    - StripePaymentsUI (= 23.18.3)
+  - StripePaymentsUI (23.18.3):
+    - StripeCore (= 23.18.3)
+    - StripePayments (= 23.18.3)
+    - StripeUICore (= 23.18.3)
+  - StripeUICore (23.18.3):
+    - StripeCore (= 23.18.3)
   - Toast (4.0.0)
   - url_launcher_ios (0.0.1):
     - Flutter
@@ -1134,15 +1134,15 @@ SPEC CHECKSUMS:
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
   sign_in_with_apple: f3bf75217ea4c2c8b91823f225d70230119b8440
   sqflite: 31f7eba61e3074736dff8807a9b41581e4f7f15a
-  Stripe: 15fad81ffb8d553d77ff504a6d50d47b9028bed0
-  stripe_ios: 872ce75ce051b4070d061a185c8b7b67323c9f30
-  StripeApplePay: 871274acfa7a96650ea8a697c288c54b8288fb6e
-  StripeCore: 7b08fd286e8f8f5336eb725bc7ed1d2a4705cdc4
-  StripeFinancialConnections: 561831507db3d383be3933a3979f1b9d287a15e7
-  StripePayments: 081e01e73762852ccf3e662202d5dd4107634058
-  StripePaymentSheet: ec04397e9223c86a87be8b348cdbcf2075dd7a16
-  StripePaymentsUI: 3dae7fed9b148b2749dff622ece45f9b441b88ce
-  StripeUICore: 4a76fa59cab679e1b2fe1ad37d6b08c5bf2ada54
+  Stripe: e046335ab6e3f25d39f1a55bd98620a85269cffa
+  stripe_ios: 37dd66ec680264019be16c5f47333f381164e6a6
+  StripeApplePay: 1aa77f8ec7a6d9463fa8f49ae0672fe59dbf4c73
+  StripeCore: fe10c34fb3c9ae18b986913f7e4460e7c653ce93
+  StripeFinancialConnections: 6022426894046f26fe21d348da02d83d8a637fb0
+  StripePayments: 7084fed30c5f03f15ae23c5dce63715ba0b53e15
+  StripePaymentSheet: c8d25d4133476c6238d3cc932fb8219bb5ea49c0
+  StripePaymentsUI: c12de264eda974d91e43a769f53a6c6afc9a1715
+  StripeUICore: 090c4fe916d039616ce8f8de30392f4aeb33dd16
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
   video_player_avfoundation: 81e49bb3d9fb63dccf9fa0f6d877dc3ddbeac126
@@ -1151,4 +1151,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 775997f741c536251164e3eacf6e34abf2eb7a17
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.15.2

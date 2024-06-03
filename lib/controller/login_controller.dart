@@ -52,7 +52,7 @@ class LoginController extends GetxController {
   Future<UserCredential?> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser =
-          await GoogleSignIn().signIn().catchError((error) {
+          await GoogleSignIn(clientId: '').signIn().catchError((error) {
         debugPrint("catchError--->$error");
         ShowToastDialog.closeLoader();
         ShowToastDialog.showToast("Something want wrong");

@@ -207,7 +207,7 @@ class InterCityScreen extends StatelessWidget {
                                             controller.whenController.value.text = string;
                                           },
                                           minDateTime: DateTime.now(),
-                                          buttonAlignement: MainAxisAlignment.center,
+                                          // buttonAlignement: MainAxisAlignment.center,
                                           displayButtonIcon: false,
                                           displaySubmitButton: true,
                                           title: '',

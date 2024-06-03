@@ -47,7 +47,7 @@
 			<string>Bundle ID</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.Mile.customer</string>
+				<string>com.mileapp.customer</string>
 			</array>
 		</dict>
 	</array>
