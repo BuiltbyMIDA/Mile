@@ -99,12 +99,12 @@ class WithDrawHistoryScreen extends StatelessWidget {
                                                             Expanded(
                                                               child: Text(
                                                                 DateFormat('KK:mm:ss a, dd MMM yyyy').format(walletTransactionModel.createdDate!.toDate()).toUpperCase(),
-                                                                style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                                                                style: GoogleFonts.manrope(fontWeight: FontWeight.w600),
                                                               ),
                                                             ),
                                                             Text(
                                                               "- ${Constant.amountShow(amount: walletTransactionModel.amount.toString().replaceAll("-", ""))}",
-                                                              style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: Colors.red),
+                                                              style: GoogleFonts.manrope(fontWeight: FontWeight.w600, color: Colors.red),
                                                             ),
                                                           ],
                                                         ),
@@ -113,12 +113,12 @@ class WithDrawHistoryScreen extends StatelessWidget {
                                                             Expanded(
                                                               child: Text(
                                                                 walletTransactionModel.note.toString(),
-                                                                style: GoogleFonts.poppins(fontWeight: FontWeight.w400),
+                                                                style: GoogleFonts.manrope(fontWeight: FontWeight.w400),
                                                               ),
                                                             ),
                                                             Text(
                                                               walletTransactionModel.paymentStatus.toString().toUpperCase(),
-                                                              style: GoogleFonts.poppins(
+                                                              style: GoogleFonts.manrope(
                                                                   fontWeight: FontWeight.w400, color: walletTransactionModel.paymentStatus == "approved" ? Colors.green : Colors.red),
                                                             ),
                                                           ],

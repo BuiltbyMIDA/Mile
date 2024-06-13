@@ -23,7 +23,7 @@ class TextFieldThem {
         enabled: enable,
         keyboardType: keyBoardType,
         maxLines: maxLine,
-        style: GoogleFonts.poppins(color: Colors.black),
+        style: GoogleFonts.manrope(color: Colors.black),
         decoration: InputDecoration(
             filled: true,
             fillColor: AppColors.textField,
@@ -77,7 +77,7 @@ class TextFieldThem {
       textAlign: TextAlign.start,
       enabled: enable,
       keyboardType: keyBoardType,
-      style: GoogleFonts.poppins(color: Colors.black),
+      style: GoogleFonts.manrope(color: Colors.black),
       onChanged: onChanged,
       decoration: InputDecoration(
         prefixIcon: prefix, // Your prefix icon widget
@@ -126,7 +126,7 @@ class TextFieldThem {
         textAlign: TextAlign.start,
         enabled: enable,
         keyboardType: keyBoardType,
-        style: GoogleFonts.poppins(
+        style: GoogleFonts.manrope(
             color: Colors.black),
         decoration: InputDecoration(
             suffixIcon: suffixIcon,

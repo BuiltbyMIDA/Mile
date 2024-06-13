@@ -116,7 +116,7 @@ class SettingScreen extends StatelessWidget {
                                                     child: Text(
                                                         item.name.toString(),
                                                         style:
-                                                            GoogleFonts.poppins(
+                                                            GoogleFonts.manrope(
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500)),
@@ -204,7 +204,7 @@ class SettingScreen extends StatelessWidget {
                                     //                 value: item,
                                     //                 child: Text(item.toString(),
                                     //                     style:
-                                    //                         GoogleFonts.poppins(
+                                    //                         GoogleFonts.manrope(
                                     //                             fontWeight:
                                     //                                 FontWeight
                                     //                                     .w500)),

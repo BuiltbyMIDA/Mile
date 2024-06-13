@@ -97,7 +97,7 @@ class DashBoardScreen extends StatelessWidget {
                                     alignment: Alignment.center,
                                     child: Text(
                                       'Online'.tr,
-                                      style: GoogleFonts.poppins(
+                                      style: GoogleFonts.manrope(
                                           color: driverModel.isOnline == true
                                               ? Colors.white
                                               : Colors.black,
@@ -124,7 +124,7 @@ class DashBoardScreen extends StatelessWidget {
                                     alignment: Alignment.center,
                                     child: Text(
                                       'Offline'.tr,
-                                      style: GoogleFonts.poppins(
+                                      style: GoogleFonts.manrope(
                                           color: driverModel.isOnline == false
                                               ? Colors.white
                                               : Colors.black,
@@ -244,7 +244,7 @@ class DashBoardScreen extends StatelessWidget {
                 ),
                 Text(
                   d.title,
-                  style: GoogleFonts.poppins(
+                  style: GoogleFonts.manrope(
                       color: i == controller.drawerItems.length - 1
                           ? const Color(0xFFFF4646)
                           : AppColors.primary,

@@ -18,6 +18,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../dashboard_screen.dart';
+
 class VehicleInformationScreen extends StatelessWidget {
   const VehicleInformationScreen({Key? key}) : super(key: key);
 
@@ -136,7 +138,7 @@ class VehicleInformationScreen extends StatelessWidget {
                                                       serviceModel.title
                                                           .toString(),
                                                       style:
-                                                          GoogleFonts.poppins(
+                                                          GoogleFonts.manrope(
                                                               color: controller
                                                                           .selectedServiceId
                                                                           .value! ==
@@ -552,6 +554,8 @@ class VehicleInformationScreen extends StatelessWidget {
                                             ShowToastDialog.showToast(
                                                 "Information update successfully"
                                                     .tr);
+
+                                            Get.offAll(const DashBoardScreen());
                                           }
                                         });
                                       }
@@ -565,7 +569,12 @@ class VehicleInformationScreen extends StatelessWidget {
                                     "You can not change once you select one service type if you want to change please contact to administrator "
                                         .tr,
                                     textAlign: TextAlign.center,
-                                    style: GoogleFonts.poppins()),
+                                    style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),),
                               ],
                             ),
                           ),

@@ -531,7 +531,7 @@ class DetailsUploadScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 15),
                     child: Text(
                       "Please Select".tr,
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.manrope(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),

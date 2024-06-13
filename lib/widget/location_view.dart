@@ -34,12 +34,22 @@ class LocationView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(sourceLocation.toString(), maxLines: 2, style: GoogleFonts.poppins()),
+              Text(sourceLocation.toString(), maxLines: 2, style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),),
               SizedBox(height: Responsive.height(2, context)),
               Text(
                 destinationLocation.toString(),
                 maxLines: 2,
-                style: GoogleFonts.poppins(),
+                style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),
               )
             ],
           ),

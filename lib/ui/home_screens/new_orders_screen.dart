@@ -111,7 +111,12 @@ class NewOrderScreen extends StatelessWidget {
                                                       child: Center(
                                                         child: Text(
                                                           'Recommended Price is ${Constant.amountShow(amount: amount)}. Approx distance ${double.parse(orderModel.distance.toString()).toStringAsFixed(Constant.currencyModel!.decimalDigits!)} ${Constant.distanceType}',
-                                                          style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
+                                                          style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                  fontWeight: FontWeight.w500,
+                                               
+                                                ),
                                                         ),
                                                       )),
                                                 ),

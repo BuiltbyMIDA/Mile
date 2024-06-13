@@ -312,7 +312,7 @@ class ActiveOrderScreen extends StatelessWidget {
               height: 10,
             ),
             Text("OTP verify from customer".tr,
-                style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
+                style: GoogleFonts.manrope(fontWeight: FontWeight.w600)),
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: PinCodeTextField(

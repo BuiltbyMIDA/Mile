@@ -123,8 +123,13 @@ class OrderIntercityScreen extends StatelessWidget {
                                                                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                                                   child: Row(
                                                                     children: [
-                                                                      Expanded(child: Text(orderModel.status.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.w600))),
-                                                                      Text(Constant().formatTimestamp(orderModel.createdDate), style: GoogleFonts.poppins()),
+                                                                      Expanded(child: Text(orderModel.status.toString(), style: GoogleFonts.manrope(fontWeight: FontWeight.w600))),
+                                                                      Text(Constant().formatTimestamp(orderModel.createdDate), style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),),
                                                                     ],
                                                                   )),
                                                             )
@@ -141,7 +146,12 @@ class OrderIntercityScreen extends StatelessWidget {
                                                                       const SizedBox(
                                                                         width: 10,
                                                                       ),
-                                                                      Text(Constant().formatTimestamp(orderModel.createdDate), style: GoogleFonts.poppins()),
+                                                                      Text(Constant().formatTimestamp(orderModel.createdDate), style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),),
                                                                     ],
                                                                   )),
                                                             ),

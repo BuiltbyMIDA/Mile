@@ -60,7 +60,7 @@ class _ChatScreensState extends State<ChatScreens> {
     return Scaffold(
       appBar: AppBar(
         elevation: 2,
-        title: Text("${widget.customerName.toString()}\n#${widget.orderId.toString()}", maxLines: 2, style: GoogleFonts.poppins(color: Colors.white, fontSize: 14)),
+        title: Text("${widget.customerName.toString()}\n#${widget.orderId.toString()}", maxLines: 2, style: GoogleFonts.manrope(color: Colors.white, fontSize: 14)),
         leading: InkWell(
             onTap: () {
               Get.back();
@@ -242,8 +242,8 @@ class _ChatScreensState extends State<ChatScreens> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text("Me".tr, style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w400)),
-                      Text(Constant.dateAndTimeFormatTimestamp(data.createdAt), style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w400)),
+                      Text("Me".tr, style: GoogleFonts.manrope(fontSize: 12, fontWeight: FontWeight.w400)),
+                      Text(Constant.dateAndTimeFormatTimestamp(data.createdAt), style: GoogleFonts.manrope(fontSize: 12, fontWeight: FontWeight.w400)),
                     ],
                   ),
                 ],
@@ -265,7 +265,7 @@ class _ChatScreensState extends State<ChatScreens> {
                             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                             child: Text(
                               data.message.toString(),
-                              style: GoogleFonts.poppins(color: data.senderId == FireStoreUtils.getCurrentUid() ? Colors.white : Colors.black),
+                              style: GoogleFonts.manrope(color: data.senderId == FireStoreUtils.getCurrentUid() ? Colors.white : Colors.black),
                             ),
                           )
                         : data.messageType == "image"
@@ -316,8 +316,8 @@ class _ChatScreensState extends State<ChatScreens> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(widget.customerName.toString(), style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w400)),
-                    Text(Constant.dateAndTimeFormatTimestamp(data.createdAt), style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w400)),
+                    Text(widget.customerName.toString(), style: GoogleFonts.manrope(fontSize: 12, fontWeight: FontWeight.w400)),
+                    Text(Constant.dateAndTimeFormatTimestamp(data.createdAt), style: GoogleFonts.manrope(fontSize: 12, fontWeight: FontWeight.w400)),
                   ],
                 ),
               ],
@@ -383,7 +383,7 @@ class _ChatScreensState extends State<ChatScreens> {
     final action = CupertinoActionSheet(
       message: Text(
         'Send Media'.tr,
-        style: GoogleFonts.poppins(fontSize: 15.0),
+        style: GoogleFonts.manrope(fontSize: 15.0),
       ),
       actions: <Widget>[
         CupertinoActionSheetAction(

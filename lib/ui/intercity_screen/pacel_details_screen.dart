@@ -73,14 +73,14 @@ class ParcelDetailsScreen extends StatelessWidget {
                                                 Expanded(
                                                   child: Text(
                                                     "Parcel Weight".tr,
-                                                    style: GoogleFonts.poppins(color: AppColors.subTitleColor),
+                                                    style: GoogleFonts.manrope(color: AppColors.subTitleColor),
                                                   ),
                                                 ),
                                                 Row(
                                                   children: [
                                                     Text(
                                                       "${controller.orderModel.value.parcelWeight} Kg.".tr,
-                                                      style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                                                      style: GoogleFonts.manrope(fontWeight: FontWeight.w600),
                                                     ),
                                                   ],
                                                 ),
@@ -92,14 +92,14 @@ class ParcelDetailsScreen extends StatelessWidget {
                                                 Expanded(
                                                   child: Text(
                                                     "Parcel dimension".tr,
-                                                    style: GoogleFonts.poppins(color: AppColors.subTitleColor),
+                                                    style: GoogleFonts.manrope(color: AppColors.subTitleColor),
                                                   ),
                                                 ),
                                                 Row(
                                                   children: [
                                                     Text(
                                                       "${controller.orderModel.value.parcelDimension} ft.".tr,
-                                                      style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                                                      style: GoogleFonts.manrope(fontWeight: FontWeight.w600),
                                                     ),
                                                   ],
                                                 ),

@@ -87,8 +87,8 @@ class AcceptedIntercityOrders extends StatelessWidget {
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text(Constant.amountShow(amount:orderModel.offerRate.toString()),
-                                                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18)),
-                                            Text(" For ${orderModel.numberOfPassenger} Person".tr, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18)),
+                                                style: GoogleFonts.manrope(fontWeight: FontWeight.bold, fontSize: 18)),
+                                            Text(" For ${orderModel.numberOfPassenger} Person".tr, style: GoogleFonts.manrope(fontWeight: FontWeight.bold, fontSize: 18)),
                                           ],
                                         ),
                                         const SizedBox(
@@ -129,7 +129,12 @@ class AcceptedIntercityOrders extends StatelessWidget {
                                                   },
                                                   child: Text(
                                                     "View details".tr,
-                                                    style: GoogleFonts.poppins(),
+                                                    style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),
                                                   )),
                                             )
                                           ],

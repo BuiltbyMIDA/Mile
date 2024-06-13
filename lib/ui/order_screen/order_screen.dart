@@ -171,7 +171,7 @@ class OrderScreen extends StatelessWidget {
                                                                             orderModel.status
                                                                                 .toString(),
                                                                             style:
-                                                                                GoogleFonts.poppins(fontWeight: FontWeight.w600))),
+                                                                                GoogleFonts.manrope(fontWeight: FontWeight.w600))),
                                                                     Text(
                                                                         Constant().formatTimestamp(orderModel
                                                                             .createdDate),

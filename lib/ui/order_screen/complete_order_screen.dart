@@ -81,7 +81,7 @@ class CompleteOrderScreen extends StatelessWidget {
                                                     Expanded(
                                                       child: Text(
                                                         "Ride ID".tr,
-                                                        style: GoogleFonts.poppins(
+                                                        style: GoogleFonts.manrope(
                                                           fontWeight: FontWeight.w600,
                                                         ),
                                                       ),
@@ -101,7 +101,7 @@ class CompleteOrderScreen extends StatelessWidget {
                                                           padding: const EdgeInsets.symmetric(horizontal: 10),
                                                           child: Text(
                                                             "Copy".tr,
-                                                            style: GoogleFonts.poppins(fontWeight: FontWeight.w700),
+                                                            style: GoogleFonts.manrope(fontWeight: FontWeight.w700),
                                                           ),
                                                         ),
                                                       ),
@@ -113,7 +113,7 @@ class CompleteOrderScreen extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   "#${controller.orderModel.value.id!.toUpperCase()}",
-                                                  style: GoogleFonts.poppins(
+                                                  style: GoogleFonts.manrope(
                                                     fontWeight: FontWeight.w400,
                                                   ),
                                                 ),
@@ -131,7 +131,7 @@ class CompleteOrderScreen extends StatelessWidget {
                                         ),
                                         Text(
                                           "Pickup and drop-off locations".tr,
-                                          style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                                          style: GoogleFonts.manrope(fontWeight: FontWeight.w600),
                                         ),
                                         const SizedBox(
                                           height: 10,
@@ -167,8 +167,13 @@ class CompleteOrderScreen extends StatelessWidget {
                                                 child: Center(
                                                   child: Row(
                                                     children: [
-                                                      Expanded(child: Text(controller.orderModel.value.status.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.w500))),
-                                                      Text(Constant().formatTimestamp(controller.orderModel.value.createdDate), style: GoogleFonts.poppins()),
+                                                      Expanded(child: Text(controller.orderModel.value.status.toString(), style: GoogleFonts.manrope(fontWeight: FontWeight.w500))),
+                                                      Text(Constant().formatTimestamp(controller.orderModel.value.createdDate), style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),),
                                                     ],
                                                   ),
                                                 )),
@@ -194,7 +199,7 @@ class CompleteOrderScreen extends StatelessWidget {
                                               children: [
                                                 Text(
                                                   "Booking summary".tr,
-                                                  style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                                                  style: GoogleFonts.manrope(fontWeight: FontWeight.w600),
                                                 ),
                                                 const Divider(
                                                   thickness: 1,
@@ -204,12 +209,12 @@ class CompleteOrderScreen extends StatelessWidget {
                                                     Expanded(
                                                       child: Text(
                                                         "Ride Amount".tr,
-                                                        style: GoogleFonts.poppins(color: AppColors.subTitleColor),
+                                                        style: GoogleFonts.manrope(color: AppColors.subTitleColor),
                                                       ),
                                                     ),
                                                     Text(
                                                       Constant.amountShow(amount: controller.orderModel.value.finalRate.toString()),
-                                                      style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                                                      style: GoogleFonts.manrope(fontWeight: FontWeight.w600),
                                                     ),
                                                   ],
                                                 ),
@@ -231,7 +236,7 @@ class CompleteOrderScreen extends StatelessWidget {
                                                                   Expanded(
                                                                     child: Text(
                                                                       "${taxModel.title.toString()} (${taxModel.type == "fix" ? Constant.amountShow(amount: taxModel.tax) : "${taxModel.tax}%"})",
-                                                                      style: GoogleFonts.poppins(color: AppColors.subTitleColor),
+                                                                      style: GoogleFonts.manrope(color: AppColors.subTitleColor),
                                                                     ),
                                                                   ),
                                                                   Text(
@@ -243,7 +248,7 @@ class CompleteOrderScreen extends StatelessWidget {
                                                                                     .toString(),
                                                                                 taxModel: taxModel)
                                                                             .toString()),
-                                                                    style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                                                                    style: GoogleFonts.manrope(fontWeight: FontWeight.w600),
                                                                   ),
                                                                 ],
                                                               ),
@@ -259,14 +264,14 @@ class CompleteOrderScreen extends StatelessWidget {
                                                     Expanded(
                                                       child: Text(
                                                         "Discount".tr,
-                                                        style: GoogleFonts.poppins(color: AppColors.subTitleColor),
+                                                        style: GoogleFonts.manrope(color: AppColors.subTitleColor),
                                                       ),
                                                     ),
                                                     Row(
                                                       children: [
                                                         Text(
                                                           "(-${controller.couponAmount.value == "0.0" ? Constant.amountShow(amount: "0.0") : Constant.amountShow(amount: controller.couponAmount.value)})",
-                                                          style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: Colors.red),
+                                                          style: GoogleFonts.manrope(fontWeight: FontWeight.w600, color: Colors.red),
                                                         ),
                                                       ],
                                                     ),
@@ -280,12 +285,12 @@ class CompleteOrderScreen extends StatelessWidget {
                                                     Expanded(
                                                       child: Text(
                                                         "Payable amount".tr,
-                                                        style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                                                        style: GoogleFonts.manrope(fontWeight: FontWeight.w600),
                                                       ),
                                                     ),
                                                     Text(
                                                       Constant.amountShow(amount: controller.calculateAmount().toString()),
-                                                      style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                                                      style: GoogleFonts.manrope(fontWeight: FontWeight.w600),
                                                     ),
                                                   ],
                                                 ),
@@ -316,7 +321,7 @@ class CompleteOrderScreen extends StatelessWidget {
                                               children: [
                                                 Text(
                                                   "Admin Commission".tr,
-                                                  style: GoogleFonts.poppins(
+                                                  style: GoogleFonts.manrope(
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -328,14 +333,14 @@ class CompleteOrderScreen extends StatelessWidget {
                                                     Expanded(
                                                       child: Text(
                                                         "Admin commission".tr,
-                                                        style: GoogleFonts.poppins(color: AppColors.subTitleColor),
+                                                        style: GoogleFonts.manrope(color: AppColors.subTitleColor),
                                                       ),
                                                     ),
                                                     Row(
                                                       children: [
                                                         Text(
                                                           "(-${Constant.amountShow(amount: Constant.calculateAdminCommission(amount: (double.parse(controller.orderModel.value.finalRate.toString()) - double.parse(controller.couponAmount.value.toString())).toString(), adminCommission: controller.orderModel.value.adminCommission).toString())})",
-                                                          style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: Colors.red),
+                                                          style: GoogleFonts.manrope(fontWeight: FontWeight.w600, color: Colors.red),
                                                         ),
                                                       ],
                                                     ),
@@ -346,7 +351,7 @@ class CompleteOrderScreen extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   "Note : Admin commission will be debited from your wallet balance. \n Admin commission will apply on Ride Amount minus Discount(if applicable).".tr,
-                                                  style: GoogleFonts.poppins(color: Colors.red),
+                                                  style: GoogleFonts.manrope(color: Colors.red),
                                                 )
                                               ],
                                             ),

@@ -89,7 +89,7 @@ class NewOrderInterCityScreen extends StatelessWidget {
                             InkWell(
                                 onTap: () async {
                                   BottomPicker.date(
-                                    titleStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 15),
+                                    titleStyle: GoogleFonts.manrope(fontWeight: FontWeight.bold, fontSize: 15),
                                     onSubmit: (index) {
                                       controller.dateAndTime = index;
                                       DateFormat dateFormat = DateFormat("EEE, dd MMMM");
@@ -190,8 +190,8 @@ class NewOrderInterCityScreen extends StatelessWidget {
                                                         Row(
                                                           crossAxisAlignment: CrossAxisAlignment.start,
                                                           children: [
-                                                            Text(Constant.amountShow(amount: orderModel.offerRate.toString()), style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18)),
-                                                            Text(" For ${orderModel.numberOfPassenger} Person".tr, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18)),
+                                                            Text(Constant.amountShow(amount: orderModel.offerRate.toString()), style: GoogleFonts.manrope(fontWeight: FontWeight.bold, fontSize: 18)),
+                                                            Text(" For ${orderModel.numberOfPassenger} Person".tr, style: GoogleFonts.manrope(fontWeight: FontWeight.bold, fontSize: 18)),
                                                           ],
                                                         ),
                                                         const SizedBox(
@@ -232,7 +232,12 @@ class NewOrderInterCityScreen extends StatelessWidget {
                                                                   },
                                                                   child: Text(
                                                                     "View details".tr,
-                                                                    style: GoogleFonts.poppins(),
+                                                                    style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),
                                                                   )),
                                                             )
                                                           ],
@@ -248,11 +253,11 @@ class NewOrderInterCityScreen extends StatelessWidget {
                                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                                   crossAxisAlignment: CrossAxisAlignment.center,
                                                                   children: [
-                                                                    Text(orderModel.whenDates.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
+                                                                    Text(orderModel.whenDates.toString(), style: GoogleFonts.manrope(fontWeight: FontWeight.w600)),
                                                                     const SizedBox(
                                                                       width: 10,
                                                                     ),
-                                                                    Text(orderModel.whenTime.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
+                                                                    Text(orderModel.whenTime.toString(), style: GoogleFonts.manrope(fontWeight: FontWeight.w600)),
                                                                   ],
                                                                 )),
                                                           ),
@@ -277,7 +282,12 @@ class NewOrderInterCityScreen extends StatelessWidget {
                                                                     child: Center(
                                                                       child: Text(
                                                                         'Recommended Price is ${Constant.amountShow(amount: amount)}. Approx distance ${double.parse(orderModel.distance.toString()).toStringAsFixed(Constant.currencyModel!.decimalDigits!)} ${Constant.distanceType}'.tr,
-                                                                        style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
+                                                                        style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                  fontWeight: FontWeight.w500,
+                                               
+                                                ),
                                                                       ),
                                                                     )),
                                                               ),
@@ -365,7 +375,12 @@ class NewOrderInterCityScreen extends StatelessWidget {
                                       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                                       child: Text(
                                         "- 10",
-                                        style: GoogleFonts.poppins(),
+                                        style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),
                                       ),
                                     ),
                                   ),
@@ -373,7 +388,12 @@ class NewOrderInterCityScreen extends StatelessWidget {
                                 const SizedBox(
                                   width: 20,
                                 ),
-                                Text(Constant.amountShow(amount: controller.newAmount.toString()), style: GoogleFonts.poppins()),
+                                Text(Constant.amountShow(amount: controller.newAmount.toString()), style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),),
                                 const SizedBox(
                                   width: 20,
                                 ),
@@ -419,7 +439,7 @@ class NewOrderInterCityScreen extends StatelessWidget {
                         InkWell(
                             onTap: () {
                               BottomPicker.time(
-                                titleStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 15),
+                                titleStyle: GoogleFonts.manrope(fontWeight: FontWeight.bold, fontSize: 15),
                                 onSubmit: (index) {
                                   controller.suggestedTime = index;
                                   DateFormat dateFormat = DateFormat("hh:mm aa");

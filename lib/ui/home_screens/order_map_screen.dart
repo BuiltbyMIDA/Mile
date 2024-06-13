@@ -137,7 +137,12 @@ class OrderMapScreen extends StatelessWidget {
                                                           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                                                           child: Text(
                                                             "- 10",
-                                                            style: GoogleFonts.poppins(),
+                                                            style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),
                                                           ),
                                                         ),
                                                       ),
@@ -145,7 +150,12 @@ class OrderMapScreen extends StatelessWidget {
                                                     const SizedBox(
                                                       width: 20,
                                                     ),
-                                                    Text(Constant.amountShow(amount: controller.newAmount.value.toString()), style: GoogleFonts.poppins()),
+                                                    Text(Constant.amountShow(amount: controller.newAmount.value.toString()), style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),),
                                                     const SizedBox(
                                                       width: 20,
                                                     ),

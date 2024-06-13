@@ -122,7 +122,7 @@ class WalletScreen extends StatelessWidget {
                       //     child: Text(
                       //       "Topup Wallet".tr.toUpperCase(),
                       //       textAlign: TextAlign.center,
-                      //       style: GoogleFonts.poppins(
+                      //       style: GoogleFonts.manrope(
                       //           fontWeight: FontWeight.w600),
                       //     ),
                       //   ),
@@ -255,7 +255,7 @@ class WalletScreen extends StatelessWidget {
                                                         ),
                                                         Text(
                                                           "${Constant.IsNegative(double.parse(walletTransactionModel.amount.toString())) ? "(-" : "+"}${Constant.amountShow(amount: walletTransactionModel.amount.toString().replaceAll("-", ""))}${Constant.IsNegative(double.parse(walletTransactionModel.amount.toString())) ? ")" : ""}",
-                                                          style: GoogleFonts.poppins(
+                                                          style: GoogleFonts.manrope(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w600,
@@ -274,7 +274,7 @@ class WalletScreen extends StatelessWidget {
                                                           .note
                                                           .toString(),
                                                       style:
-                                                          GoogleFonts.poppins(
+                                                          GoogleFonts.manrope(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w400),
@@ -378,7 +378,12 @@ class WalletScreen extends StatelessWidget {
                                 child: Center(
                                     child: Text(
                               "Topup Wallet".tr,
-                              style: GoogleFonts.poppins(),
+                              style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),
                             ))),
                           ],
                         ),
@@ -392,7 +397,7 @@ class WalletScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   "Add Topup Amount".tr,
-                                  style: GoogleFonts.poppins(
+                                  style: GoogleFonts.manrope(
                                       fontWeight: FontWeight.w600),
                                 ),
                                 const SizedBox(
@@ -408,7 +413,7 @@ class WalletScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   "Select Payment Option".tr,
-                                  style: GoogleFonts.poppins(
+                                  style: GoogleFonts.manrope(
                                       fontWeight: FontWeight.w600),
                                 ),
                                 Visibility(
@@ -481,7 +486,7 @@ class WalletScreen extends StatelessWidget {
                                                         .value.payStack!.name
                                                         .toString(),
                                                     style:
-                                                        GoogleFonts.poppins(),
+                                                        GoogleFonts.manrope(),
                                                   ),
                                                 ),
                                                 Radio(
@@ -583,7 +588,7 @@ class WalletScreen extends StatelessWidget {
                                                         .value.flutterWave!.name
                                                         .toString(),
                                                     style:
-                                                        GoogleFonts.poppins(),
+                                                        GoogleFonts.manrope(),
                                                   ),
                                                 ),
                                                 Radio(
@@ -682,7 +687,7 @@ class WalletScreen extends StatelessWidget {
                                                         .value.payfast!.name
                                                         .toString(),
                                                     style:
-                                                        GoogleFonts.poppins(),
+                                                        GoogleFonts.manrope(),
                                                   ),
                                                 ),
                                                 Radio(
@@ -778,7 +783,7 @@ class WalletScreen extends StatelessWidget {
                                                         .value.paytm!.name
                                                         .toString(),
                                                     style:
-                                                        GoogleFonts.poppins(),
+                                                        GoogleFonts.manrope(),
                                                   ),
                                                 ),
                                                 Radio(
@@ -877,7 +882,7 @@ class WalletScreen extends StatelessWidget {
                                                         .value.razorpay!.name
                                                         .toString(),
                                                     style:
-                                                        GoogleFonts.poppins(),
+                                                        GoogleFonts.manrope(),
                                                   ),
                                                 ),
                                                 Radio(
@@ -973,7 +978,7 @@ class WalletScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
                         "Transaction Details".tr,
-                        style: GoogleFonts.poppins(
+                        style: GoogleFonts.manrope(
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
                         ),
@@ -1005,7 +1010,7 @@ class WalletScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   "Transaction ID".tr,
-                                  style: GoogleFonts.poppins(
+                                  style: GoogleFonts.manrope(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 15,
                                   ),
@@ -1015,7 +1020,7 @@ class WalletScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   "#${walletTransactionModel.transactionId!.toUpperCase()}",
-                                  style: GoogleFonts.poppins(
+                                  style: GoogleFonts.manrope(
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -1057,7 +1062,7 @@ class WalletScreen extends StatelessWidget {
                                   children: [
                                     Text(
                                       "Payment Details".tr,
-                                      style: GoogleFonts.poppins(
+                                      style: GoogleFonts.manrope(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 14,
                                       ),
@@ -1071,14 +1076,14 @@ class WalletScreen extends StatelessWidget {
                                           opacity: 0.7,
                                           child: Text(
                                             "Pay Via".tr,
-                                            style: GoogleFonts.poppins(
+                                            style: GoogleFonts.manrope(
                                               fontSize: 16,
                                             ),
                                           ),
                                         ),
                                         Text(
                                           " ${walletTransactionModel.paymentType}",
-                                          style: GoogleFonts.poppins(
+                                          style: GoogleFonts.manrope(
                                             fontWeight: FontWeight.w600,
                                             color: AppColors.primary,
                                             fontSize: 16,
@@ -1105,7 +1110,7 @@ class WalletScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         "Date in UTC Format".tr,
-                                        style: GoogleFonts.poppins(
+                                        style: GoogleFonts.manrope(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 14,
                                         ),
@@ -1121,7 +1126,7 @@ class WalletScreen extends StatelessWidget {
                                                   .createdDate!
                                                   .toDate())
                                               .toUpperCase(),
-                                          style: GoogleFonts.poppins(
+                                          style: GoogleFonts.manrope(
                                             fontSize: 16,
                                           ),
                                         ),
@@ -1172,7 +1177,7 @@ class WalletScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 25.0, bottom: 10),
                       child: Text(
                         "Withdraw".tr,
-                        style: GoogleFonts.poppins(
+                        style: GoogleFonts.manrope(
                           fontSize: 18,
                         ),
                       ),
@@ -1206,7 +1211,7 @@ class WalletScreen extends StatelessWidget {
                                   Text(
                                     controller.bankDetailsModel.value.bankName
                                         .toString(),
-                                    style: GoogleFonts.poppins(
+                                    style: GoogleFonts.manrope(
                                       fontSize: 22,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -1223,7 +1228,7 @@ class WalletScreen extends StatelessWidget {
                               Text(
                                 controller.bankDetailsModel.value.accountNumber
                                     .toString(),
-                                style: GoogleFonts.poppins(
+                                style: GoogleFonts.manrope(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -1234,7 +1239,7 @@ class WalletScreen extends StatelessWidget {
                               Text(
                                 controller.bankDetailsModel.value.holderName
                                     .toString(),
-                                style: GoogleFonts.poppins(
+                                style: GoogleFonts.manrope(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -1245,7 +1250,7 @@ class WalletScreen extends StatelessWidget {
                               Text(
                                 controller.bankDetailsModel.value.branchName
                                     .toString(),
-                                style: GoogleFonts.poppins(
+                                style: GoogleFonts.manrope(
                                   fontSize: 18,
                                 ),
                               ),
@@ -1253,7 +1258,12 @@ class WalletScreen extends StatelessWidget {
                                 controller
                                     .bankDetailsModel.value.otherInformation
                                     .toString(),
-                                style: GoogleFonts.poppins(),
+                                style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),
                               ),
                               const SizedBox(
                                 height: 10,
@@ -1267,7 +1277,7 @@ class WalletScreen extends StatelessWidget {
                     RichText(
                       text: TextSpan(
                         text: "Amount to Withdraw".tr,
-                        style: GoogleFonts.poppins(
+                        style: GoogleFonts.manrope(
                           fontSize: 16,
                         ),
                       ),

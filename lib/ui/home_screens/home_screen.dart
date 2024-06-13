@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                                   //     "You have to minimum ${Constant.amountShow(amount: Constant.minimumDepositToRideAccept.toString())} wallet amount to Accept Order and place a bid"
 
                                   //         .tr,
-                                  //     style: GoogleFonts.poppins(
+                                  //     style: GoogleFonts.manrope(
                                   //         color: const Color(0xFF3478DD))),
                                   ),
                             ),

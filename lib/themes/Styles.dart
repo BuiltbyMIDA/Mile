@@ -31,7 +31,7 @@ class Styles {
           centerTitle: true,
           iconTheme: const IconThemeData(color: Colors.white),
           titleTextStyle:
-              GoogleFonts.poppins(color: Colors.white, fontSize: 16)),
+              GoogleFonts.manrope(color: Colors.white, fontSize: 16)),
     );
   }
 }

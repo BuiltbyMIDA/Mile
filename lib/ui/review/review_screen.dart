@@ -59,7 +59,7 @@ class ReviewScreen extends StatelessWidget {
                                   Text(
                                     '${controller.userModel.value.fullName}',
                                     textAlign: TextAlign.center,
-                                    style: GoogleFonts.poppins(letterSpacing: 0.8, fontWeight: FontWeight.w800),
+                                    style: GoogleFonts.manrope(letterSpacing: 0.8, fontWeight: FontWeight.w800),
                                   ),
                                   const SizedBox(
                                     height: 8,
@@ -77,7 +77,7 @@ class ReviewScreen extends StatelessWidget {
                                         width: 5,
                                       ),
                                       Text(Constant.calculateReview(reviewCount: controller.userModel.value.reviewsCount.toString(), reviewSum: controller.userModel.value.reviewsSum.toString()).toString(),
-                                          style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                                          style: GoogleFonts.manrope(fontWeight: FontWeight.w500)),
                                     ],
                                   ),
                                   const SizedBox(
@@ -89,14 +89,14 @@ class ReviewScreen extends StatelessWidget {
                                     child: Text(
                                       'Rate for'.tr,
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.poppins(letterSpacing: 0.8),
+                                      style: GoogleFonts.manrope(letterSpacing: 0.8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 8),
                                     child: Text(
                                       "${controller.userModel.value.fullName}",
-                                      style: GoogleFonts.poppins(fontWeight: FontWeight.bold, letterSpacing: 2),
+                                      style: GoogleFonts.manrope(fontWeight: FontWeight.bold, letterSpacing: 2),
                                     ),
                                   ),
                                   Padding(

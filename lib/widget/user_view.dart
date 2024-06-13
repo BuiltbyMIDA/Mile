@@ -49,11 +49,16 @@ class UserView extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Asynchronous user", style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
+                            Text("Asynchronous user", style: GoogleFonts.manrope(fontWeight: FontWeight.w600)),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(Constant.amountShow(amount: amount.toString()), style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                                Text(Constant.amountShow(amount: amount.toString()), style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                  fontWeight: FontWeight.w500,
+                                               
+                                                ),),
                                 Row(
                                   children: [
                                     const Icon(
@@ -64,7 +69,12 @@ class UserView extends StatelessWidget {
                                       width: 5,
                                     ),
                                     Text("${(double.parse(distance.toString())).toStringAsFixed(Constant.currencyModel!.decimalDigits!)} $distanceType",
-                                        style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                                        style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                  fontWeight: FontWeight.w500,
+                                               
+                                                ),),
                                   ],
                                 ),
                                 Row(
@@ -77,7 +87,12 @@ class UserView extends StatelessWidget {
                                     const SizedBox(
                                       width: 5,
                                     ),
-                                    Text(Constant.calculateReview(reviewCount: "0.0", reviewSum: "0.0"), style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                                    Text(Constant.calculateReview(reviewCount: "0.0", reviewSum: "0.0"), style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                  fontWeight: FontWeight.w500,
+                                               
+                                                ),),
                                   ],
                                 ),
                               ],
@@ -111,11 +126,16 @@ class UserView extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(driverModel.fullName.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
+                          Text(driverModel.fullName.toString(), style: GoogleFonts.manrope(fontWeight: FontWeight.w600)),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(Constant.amountShow(amount: amount.toString()), style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                              Text(Constant.amountShow(amount: amount.toString()), style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                  fontWeight: FontWeight.w500,
+                                               
+                                                ),),
                               Row(
                                 children: [
                                   const Icon(
@@ -126,7 +146,12 @@ class UserView extends StatelessWidget {
                                     width: 5,
                                   ),
                                   Text("${(double.parse(distance.toString())).toStringAsFixed(Constant.currencyModel!.decimalDigits!)} $distanceType",
-                                      style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                                      style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                  fontWeight: FontWeight.w500,
+                                               
+                                                ),),
                                 ],
                               ),
                               Row(
@@ -139,7 +164,12 @@ class UserView extends StatelessWidget {
                                   const SizedBox(
                                     width: 5,
                                   ),
-                                  Text(Constant.calculateReview(reviewCount: driverModel.reviewsCount, reviewSum: driverModel.reviewsSum), style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                                  Text(Constant.calculateReview(reviewCount: driverModel.reviewsCount, reviewSum: driverModel.reviewsSum), style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                  fontWeight: FontWeight.w500,
+                                               
+                                                ),),
                                 ],
                               ),
                             ],

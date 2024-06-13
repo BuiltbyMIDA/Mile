@@ -49,7 +49,7 @@ class UserDriverView extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Asynchronous user", style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
+                                Text("Asynchronous user", style: GoogleFonts.manrope(fontWeight: FontWeight.w600)),
                                 Row(
                                   children: [
                                     Expanded(
@@ -64,13 +64,13 @@ class UserDriverView extends StatelessWidget {
                                             width: 5,
                                           ),
                                           Text(Constant.calculateReview(reviewCount: "0.0", reviewSum: "0.0"),
-                                              style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                                              style: GoogleFonts.manrope(fontWeight: FontWeight.w500)),
                                         ],
                                       ),
                                     ),
                                     Text(
                                       Constant.amountShow(amount: amount),
-                                      style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                                      style: GoogleFonts.manrope(fontWeight: FontWeight.bold),
                                     ),
                                   ],
                                 )
@@ -107,7 +107,7 @@ class UserDriverView extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(driverModel.fullName.toString(), style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
+                                Text(driverModel.fullName.toString(), style: GoogleFonts.manrope(fontWeight: FontWeight.w600)),
                                 Row(
                                   children: [
                                     Expanded(
@@ -122,13 +122,13 @@ class UserDriverView extends StatelessWidget {
                                             width: 5,
                                           ),
                                           Text(Constant.calculateReview(reviewCount: driverModel.reviewsCount.toString(), reviewSum: driverModel.reviewsSum.toString()),
-                                              style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                                              style: GoogleFonts.manrope(fontWeight: FontWeight.w500)),
                                         ],
                                       ),
                                     ),
                                     Text(
                                       Constant.amountShow(amount: amount),
-                                      style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                                      style: GoogleFonts.manrope(fontWeight: FontWeight.bold),
                                     ),
 
                                   ],

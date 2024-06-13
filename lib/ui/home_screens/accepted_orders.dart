@@ -141,7 +141,7 @@ class AcceptedOrders extends StatelessWidget {
                                                         Expanded(
                                                             child: Text(
                                                                 "Offer Rate".tr,
-                                                                style: GoogleFonts.poppins(
+                                                                style: GoogleFonts.manrope(
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w600))),

@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../dashboard_screen.dart';
+
 class BankDetailsScreen extends StatelessWidget {
   const BankDetailsScreen({super.key});
 
@@ -156,6 +158,8 @@ class BankDetailsScreen extends StatelessWidget {
                       ShowToastDialog.closeLoader();
                       ShowToastDialog.showToast(
                           "Bank details update successfully".tr);
+
+                      Get.offAll(const DashBoardScreen());
                     });
                   }
                 },

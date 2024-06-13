@@ -61,7 +61,7 @@ class LoginScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
                             child: Text("Login".tr,
-                                style: GoogleFonts.poppins(
+                                style: GoogleFonts.manrope(
                                     fontWeight: FontWeight.w600, fontSize: 24)),
                           ),
                           Padding(
@@ -90,7 +90,7 @@ class LoginScreen extends StatelessWidget {
                               controller:
                                   controller.phoneNumberController.value,
                               textAlign: TextAlign.start,
-                              style: GoogleFonts.poppins(color: Colors.black),
+                              style: GoogleFonts.manrope(color: Colors.black),
                               decoration: InputDecoration(
                                   isDense: true,
                                   filled: true,
@@ -176,7 +176,7 @@ class LoginScreen extends StatelessWidget {
                                       horizontal: 20),
                                   child: Text(
                                     "OR".tr,
-                                    style: GoogleFonts.poppins(
+                                    style: GoogleFonts.manrope(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -319,7 +319,12 @@ class LoginScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     TextSpan(
                       text: 'By tapping "Next" you agree to '.tr,
-                      style: GoogleFonts.poppins(),
+                      style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),
                       children: <TextSpan>[
                         TextSpan(
                             recognizer: TapGestureRecognizer()
@@ -329,9 +334,9 @@ class LoginScreen extends StatelessWidget {
                                 ));
                               },
                             text: 'Terms and conditions'.tr,
-                            style: GoogleFonts.poppins(
+                            style: GoogleFonts.manrope(
                                 decoration: TextDecoration.underline)),
-                        TextSpan(text: ' and ', style: GoogleFonts.poppins()),
+                        TextSpan(text: ' and ', style:  TextStyle(fontFamily: 'Manrope',),),
                         TextSpan(
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
@@ -340,7 +345,7 @@ class LoginScreen extends StatelessWidget {
                                 ));
                               },
                             text: 'privacy policy'.tr,
-                            style: GoogleFonts.poppins(
+                            style: GoogleFonts.manrope(
                                 decoration: TextDecoration.underline)),
                         // can add more TextSpans here...
                       ],

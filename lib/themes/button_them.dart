@@ -36,8 +36,13 @@ class ButtonThem {
           child: Text(
             title.toUpperCase(),
             textAlign: TextAlign.center,
-            style: GoogleFonts.poppins(
-                fontSize: txtSize, fontWeight: FontWeight.w600),
+            style:  TextStyle(
+              fontSize: txtSize,
+              fontFamily: 'Manrope',
+              fontWeight: FontWeight.w500,
+
+            ),
+
           ),
         ),
       ),
@@ -90,7 +95,7 @@ class ButtonThem {
               Text(
                 title.toUpperCase(),
                 textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.manrope(
                     color: const Color(0xFF1D2838),
                     fontSize: txtSize,
                     fontWeight: FontWeight.w600),
@@ -140,7 +145,7 @@ class ButtonThem {
               Text(
                 title.toUpperCase(),
                 textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.manrope(
                     color: txtColor,
                     fontSize: txtSize,
                     fontWeight: FontWeight.w600),

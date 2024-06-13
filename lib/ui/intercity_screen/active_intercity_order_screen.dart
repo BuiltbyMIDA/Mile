@@ -121,8 +121,8 @@ class ActiveIntercityOrderScreen extends StatelessWidget {
                                                 Row(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(Constant.amountShow(amount: orderModel.offerRate.toString()), style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18)),
-                                                    Text(" For ${orderModel.numberOfPassenger} Person".tr, style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18)),
+                                                    Text(Constant.amountShow(amount: orderModel.offerRate.toString()), style: GoogleFonts.manrope(fontWeight: FontWeight.bold, fontSize: 18)),
+                                                    Text(" For ${orderModel.numberOfPassenger} Person".tr, style: GoogleFonts.manrope(fontWeight: FontWeight.bold, fontSize: 18)),
                                                   ],
                                                 ),
                                                 const SizedBox(
@@ -163,7 +163,12 @@ class ActiveIntercityOrderScreen extends StatelessWidget {
                                                           },
                                                           child: Text(
                                                             "View details".tr,
-                                                            style: GoogleFonts.poppins(),
+                                                            style: const TextStyle(
+                                                  
+                                                  fontFamily: 'Manrope',
+                                                
+                                               
+                                                ),
                                                           )),
                                                     )
                                                   ],
@@ -298,7 +303,7 @@ class ActiveIntercityOrderScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Text("OTP verify from customer".tr, style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
+            Text("OTP verify from customer".tr, style: GoogleFonts.manrope(fontWeight: FontWeight.w600)),
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: PinCodeTextField(
