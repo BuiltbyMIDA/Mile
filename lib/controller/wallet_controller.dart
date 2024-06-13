@@ -109,8 +109,11 @@ class WalletController extends GetxController {
             secretKey: paymentModel.value.payStack!.secretKey.toString(),
             userModel: userModel.value)
         .then((value) async {
+          print("value is");
+          print(value);
       if (value != null) {
         PayStackUrlModel payStackModel = value;
+        print(payStackModel.status);
         Get.to(PayStackScreen(
           secretKey: paymentModel.value.payStack!.secretKey.toString(),
           callBackUrl: paymentModel.value.payStack!.callbackURL.toString(),
@@ -119,10 +122,12 @@ class WalletController extends GetxController {
           reference: payStackModel.data.reference,
         ))!
             .then((value) {
-          if (value) {
+          if (payStackModel.status) {
+            print("got here Successful");
             ShowToastDialog.showToast("Payment Successful!!");
             walletTopUp();
           } else {
+            print("got here UnSuccessful");
             ShowToastDialog.showToast("Payment UnSuccessful!!");
           }
         });
@@ -146,7 +151,7 @@ class WalletController extends GetxController {
       context: context,
       publicKey: paymentModel.value.flutterWave!.publicKey.toString().trim(),
       paymentOptions: "ussd, card, barter, payattitude",
-      customization: Customization(title: "GoRide"),
+      customization: Customization(title: "Mile"),
       txRef: _ref!,
       isTestMode: paymentModel.value.flutterWave!.isSandbox!,
       redirectUrl: '${Constant.globalUrl}success',

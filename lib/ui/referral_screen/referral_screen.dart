@@ -336,7 +336,7 @@ class ReferralScreen extends StatelessWidget {
   Future<void> share(ReferralController controller) async {
     ShowToastDialog.closeLoader();
     await FlutterShare.share(
-      title: 'GoRide'.tr,
+      title: 'Mile'.tr,
       text:
           'Hey there, thanks for choosing Mile. Hope you love our product. If you do, share it with your friends using code ${controller.referralModel.value.referralCode.toString()} and get ${Constant.amountShow(amount: Constant.referralAmount)}.'
               .tr,

@@ -105,7 +105,7 @@ class NotificationService {
 
       AndroidNotificationChannel channel = const AndroidNotificationChannel(
         '0',
-        'goRide-customer',
+        'Mile-customer',
         description: 'Show QuickLAI Notification',
         importance: Importance.max,
       );

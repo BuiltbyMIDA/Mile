@@ -1,7 +1,7 @@
 const Map<String, String> enUS = {
-  'GoRide':'GoRide',
+  'Mile':'Mile',
   "Sign up" : "Sign up",
-  "Create your account to start using GoRide" :"Create your account to start using GoRide",
+  "Create your account to start using Mile" :"Create your account to start using Mile",
   "Full name" :"Full name",
   "Phone number" :"Phone number",
   "Email" :"Email",
@@ -141,13 +141,13 @@ const Map<String, String> enUS = {
   "Invite Friend & Businesses":"Invite Friend & Businesses",
   "Earn" :"Earn",
   "each" :"each",
-  "Invite GoRide to sign up using your link and you’ll get" :"Invite GoRide to sign up using your link and you’ll get",
+  "Invite Mile to sign up using your link and you’ll get" :"Invite Mile to sign up using your link and you’ll get",
   "Invite a Friend":"Invite a Friend",
   "They register":"They register",
   "Get Reward to complete first orde":"Get Reward to complete first orde",
   "REFER FRIEND":"REFER FRIEND",
-  'Hey there, thanks for choosing GoRide. Hope you love our product. If you do, share it with your friends using code and get.':
-  'Hey there, thanks for choosing GoRide. Hope you love our product. If you do, share it with your friends using code and get.',
+  'Hey there, thanks for choosing Mile. Hope you love our product. If you do, share it with your friends using code and get.':
+  'Hey there, thanks for choosing Mile. Hope you love our product. If you do, share it with your friends using code and get.',
   'Rate for':'Rate for',
   'Comment..':'Comment..',
   "Review submit successfully":"Review submit successfully",

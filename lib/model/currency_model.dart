@@ -41,12 +41,14 @@ class CurrencyModel {
         : 2;
     id = json['id'];
 
-    updatedAt = json['updatedAt'] != null
-        ? Timestamp(
-            (json['updatedAt'] as Map<String, dynamic>)['_seconds'] as int,
-            (json['updatedAt'] as Map<String, dynamic>)['_nanoseconds'] as int,
-          )
-        : null;
+    updatedAt = json['updatedAt'];
+
+    // updatedAt = json['updatedAt'] != null
+    //     ? Timestamp(
+    //         (json['updatedAt'] as Map<String, dynamic>)['_seconds'] as int,
+    //         (json['updatedAt'] as Map<String, dynamic>)['_nanoseconds'] as int,
+    //       )
+    //     : null;
   }
 
   Map<String, dynamic> toJson() {
