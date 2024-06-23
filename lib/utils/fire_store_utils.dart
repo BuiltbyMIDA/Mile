@@ -94,6 +94,27 @@ class FireStoreUtils {
     //     Constant.supportURL = value.data()!["supportURL"];
     //   }
     // });
+
+
+
+    await fireStore.collection(CollectionName.settings).doc("adminCommission").get().then((value) {
+      AdminCommission adminCommission = AdminCommission.fromJson(value.data()!);
+      if (adminCommission.isEnabled == true) {
+        Constant.adminCommission = adminCommission;
+      }
+    });
+
+    await fireStore.collection(CollectionName.settings).doc("referral").get().then((value) {
+      if (value.exists) {
+        Constant.referralAmount = value.data()!["referralAmount"];
+      }
+    });
+
+    await fireStore.collection(CollectionName.settings).doc("contact_us").get().then((value) {
+      if (value.exists) {
+        Constant.supportURL = value.data()!["supportURL"];
+      }
+    });
   }
 
   static String getCurrentUid() {

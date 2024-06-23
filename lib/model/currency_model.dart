@@ -9,7 +9,7 @@ class CurrencyModel {
   String? name;
   int? decimalDigits;
   String? id;
-  Timestamp? updatedAt;
+  var updatedAt;
 
   CurrencyModel({
     this.createdAt,

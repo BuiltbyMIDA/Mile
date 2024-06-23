@@ -18,8 +18,8 @@ class DarkThemeProvider with ChangeNotifier {
     return darkTheme == 0
         ? true
         : darkTheme == 1
-            ? false
-            : DarkThemeProvider().getSystemThem();
+        ? false
+        : DarkThemeProvider().getSystemThem();
   }
 
   bool getSystemThem() {

@@ -42,179 +42,179 @@ class SettingScreen extends StatelessWidget {
                               Expanded(
                                 child: Column(
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Row(
-                                        children: [
-                                          SvgPicture.asset(
-                                              'assets/icons/ic_language.svg',
-                                              color: const Color(0xFF1C1B1F),
-                                              width: 18),
-                                          const SizedBox(
-                                            width: 20,
-                                          ),
-                                          Expanded(
-                                            child: Text(
-                                              "Language".tr,
-                                              style: const TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontFamily: 'Instrument Sans',
-                                                fontWeight: FontWeight.w600,
-                                                letterSpacing: -0.20,
-                                              ),
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            width:
-                                                Responsive.width(26, context),
-                                            child: DropdownButtonFormField(
-                                                isExpanded: true,
-                                                decoration:
-                                                    const InputDecoration(
-                                                  contentPadding:
-                                                      EdgeInsets.symmetric(
-                                                          vertical: 1),
-                                                  disabledBorder:
-                                                      InputBorder.none,
-                                                  focusedBorder:
-                                                      InputBorder.none,
-                                                  enabledBorder:
-                                                      InputBorder.none,
-                                                  errorBorder: InputBorder.none,
-                                                  border: InputBorder.none,
-                                                  isDense: true,
-                                                ),
-                                                value: controller
-                                                            .selectedLanguage
-                                                            .value
-                                                            .id ==
-                                                        null
-                                                    ? null
-                                                    : controller
-                                                        .selectedLanguage.value,
-                                                onChanged: (value) {
-                                                  controller.selectedLanguage
-                                                      .value = value!;
-
-                                                  LocalizationService()
-                                                      .changeLocale(value.code
-                                                          .toString());
-                                                  Preferences.setString(
-                                                      Preferences
-                                                          .languageCodeKey,
-                                                      jsonEncode(controller
-                                                          .selectedLanguage
-                                                          .value));
-                                                },
-                                                hint: Text("select".tr),
-                                                items: controller.languageList
-                                                    .map((item) {
-                                                  print(item.toJson());
-                                                  return DropdownMenuItem(
-                                                    value: item,
-                                                    child: Text(
-                                                        item.name.toString(),
-                                                        style:
-                                                            GoogleFonts.poppins(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500)),
-                                                  );
-                                                }).toList()),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    const Divider(),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Row(
-                                        children: [
-                                          SvgPicture.asset(
-                                              'assets/icons/ic_light_drak.svg',
-                                              color: const Color(0xFF1C1B1F),
-                                              width: 18),
-                                          const SizedBox(
-                                            width: 20,
-                                          ),
-                                          Expanded(
-                                              child: Text(
-                                            "Light/dark mod".tr,
-                                            style: const TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 16,
-                                              fontFamily: 'Instrument Sans',
-                                              fontWeight: FontWeight.w600,
-                                              letterSpacing: -0.20,
-                                            ),
-                                          )),
-                                          SizedBox(
-                                            width:
-                                                Responsive.width(26, context),
-                                            child: DropdownButtonFormField<
-                                                    String>(
-                                                isExpanded: true,
-                                                decoration:
-                                                    const InputDecoration(
-                                                  contentPadding:
-                                                      EdgeInsets.symmetric(
-                                                          vertical: 1),
-                                                  disabledBorder:
-                                                      InputBorder.none,
-                                                  focusedBorder:
-                                                      InputBorder.none,
-                                                  enabledBorder:
-                                                      InputBorder.none,
-                                                  errorBorder: InputBorder.none,
-                                                  border: InputBorder.none,
-                                                  isDense: true,
-                                                ),
-                                                validator: (value) =>
-                                                    value == null
-                                                        ? 'field required'
-                                                        : null,
-                                                value: controller
-                                                        .selectedMode.isEmpty
-                                                    ? null
-                                                    : controller
-                                                        .selectedMode.value,
-                                                onChanged: (value) {
-                                                  controller.selectedMode
-                                                      .value = value!;
-                                                  Preferences.setString(
-                                                      Preferences.themKey,
-                                                      value.toString());
-                                                  if (controller
-                                                          .selectedMode.value ==
-                                                      "Dark mode") {
-                                                    themeChange.darkTheme = 0;
-                                                  } else if (controller
-                                                          .selectedMode.value ==
-                                                      "Light mode") {
-                                                    themeChange.darkTheme = 1;
-                                                  } else {
-                                                    themeChange.darkTheme = 2;
-                                                  }
-                                                },
-                                                hint: Text("select".tr),
-                                                items: controller.modeList
-                                                    .map((item) {
-                                                  return DropdownMenuItem(
-                                                    value: item,
-                                                    child: Text(item.toString(),
-                                                        style:
-                                                            GoogleFonts.poppins(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500)),
-                                                  );
-                                                }).toList()),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    const Divider(),
+                                    // Padding(
+                                    //   padding: const EdgeInsets.all(8.0),
+                                    //   child: Row(
+                                    //     children: [
+                                    //       SvgPicture.asset(
+                                    //           'assets/icons/ic_language.svg',
+                                    //           color: const Color(0xFF1C1B1F),
+                                    //           width: 18),
+                                    //       const SizedBox(
+                                    //         width: 20,
+                                    //       ),
+                                    //       Expanded(
+                                    //         child: Text(
+                                    //           "Language".tr,
+                                    //           style: const TextStyle(
+                                    //             color: Colors.black,
+                                    //             fontSize: 16,
+                                    //             fontFamily: 'Instrument Sans',
+                                    //             fontWeight: FontWeight.w600,
+                                    //             letterSpacing: -0.20,
+                                    //           ),
+                                    //         ),
+                                    //       ),
+                                    //       SizedBox(
+                                    //         width:
+                                    //             Responsive.width(26, context),
+                                    //         child: DropdownButtonFormField(
+                                    //             isExpanded: true,
+                                    //             decoration:
+                                    //                 const InputDecoration(
+                                    //               contentPadding:
+                                    //                   EdgeInsets.symmetric(
+                                    //                       vertical: 1),
+                                    //               disabledBorder:
+                                    //                   InputBorder.none,
+                                    //               focusedBorder:
+                                    //                   InputBorder.none,
+                                    //               enabledBorder:
+                                    //                   InputBorder.none,
+                                    //               errorBorder: InputBorder.none,
+                                    //               border: InputBorder.none,
+                                    //               isDense: true,
+                                    //             ),
+                                    //             value: controller
+                                    //                         .selectedLanguage
+                                    //                         .value
+                                    //                         .id ==
+                                    //                     null
+                                    //                 ? null
+                                    //                 : controller
+                                    //                     .selectedLanguage.value,
+                                    //             onChanged: (value) {
+                                    //               controller.selectedLanguage
+                                    //                   .value = value!;
+                                    //
+                                    //               LocalizationService()
+                                    //                   .changeLocale(value.code
+                                    //                       .toString());
+                                    //               Preferences.setString(
+                                    //                   Preferences
+                                    //                       .languageCodeKey,
+                                    //                   jsonEncode(controller
+                                    //                       .selectedLanguage
+                                    //                       .value));
+                                    //             },
+                                    //             hint: Text("select".tr),
+                                    //             items: controller.languageList
+                                    //                 .map((item) {
+                                    //               print(item.toJson());
+                                    //               return DropdownMenuItem(
+                                    //                 value: item,
+                                    //                 child: Text(
+                                    //                     item.name.toString(),
+                                    //                     style:
+                                    //                         GoogleFonts.poppins(
+                                    //                             fontWeight:
+                                    //                                 FontWeight
+                                    //                                     .w500)),
+                                    //               );
+                                    //             }).toList()),
+                                    //       ),
+                                    //     ],
+                                    //   ),
+                                    // ),
+                                    // const Divider(),
+                                    // Padding(
+                                    //   padding: const EdgeInsets.all(8.0),
+                                    //   child: Row(
+                                    //     children: [
+                                    //       SvgPicture.asset(
+                                    //           'assets/icons/ic_light_drak.svg',
+                                    //           color: const Color(0xFF1C1B1F),
+                                    //           width: 18),
+                                    //       const SizedBox(
+                                    //         width: 20,
+                                    //       ),
+                                    //       Expanded(
+                                    //           child: Text(
+                                    //         "Light/dark mod".tr,
+                                    //         style: const TextStyle(
+                                    //           color: Colors.black,
+                                    //           fontSize: 16,
+                                    //           fontFamily: 'Instrument Sans',
+                                    //           fontWeight: FontWeight.w600,
+                                    //           letterSpacing: -0.20,
+                                    //         ),
+                                    //       )),
+                                    //       SizedBox(
+                                    //         width:
+                                    //             Responsive.width(26, context),
+                                    //         child: DropdownButtonFormField<
+                                    //                 String>(
+                                    //             isExpanded: true,
+                                    //             decoration:
+                                    //                 const InputDecoration(
+                                    //               contentPadding:
+                                    //                   EdgeInsets.symmetric(
+                                    //                       vertical: 1),
+                                    //               disabledBorder:
+                                    //                   InputBorder.none,
+                                    //               focusedBorder:
+                                    //                   InputBorder.none,
+                                    //               enabledBorder:
+                                    //                   InputBorder.none,
+                                    //               errorBorder: InputBorder.none,
+                                    //               border: InputBorder.none,
+                                    //               isDense: true,
+                                    //             ),
+                                    //             validator: (value) =>
+                                    //                 value == null
+                                    //                     ? 'field required'
+                                    //                     : null,
+                                    //             value: controller
+                                    //                     .selectedMode.isEmpty
+                                    //                 ? null
+                                    //                 : controller
+                                    //                     .selectedMode.value,
+                                    //             onChanged: (value) {
+                                    //               controller.selectedMode
+                                    //                   .value = value!;
+                                    //               Preferences.setString(
+                                    //                   Preferences.themKey,
+                                    //                   value.toString());
+                                    //               if (controller
+                                    //                       .selectedMode.value ==
+                                    //                   "Dark mode") {
+                                    //                 themeChange.darkTheme = 0;
+                                    //               } else if (controller
+                                    //                       .selectedMode.value ==
+                                    //                   "Light mode") {
+                                    //                 themeChange.darkTheme = 1;
+                                    //               } else {
+                                    //                 themeChange.darkTheme = 2;
+                                    //               }
+                                    //             },
+                                    //             hint: Text("select".tr),
+                                    //             items: controller.modeList
+                                    //                 .map((item) {
+                                    //               return DropdownMenuItem(
+                                    //                 value: item,
+                                    //                 child: Text(item.toString(),
+                                    //                     style:
+                                    //                         GoogleFonts.poppins(
+                                    //                             fontWeight:
+                                    //                                 FontWeight
+                                    //                                     .w500)),
+                                    //               );
+                                    //             }).toList()),
+                                    //       ),
+                                    //     ],
+                                    //   ),
+                                    // ),
+                                    // const Divider(),
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: InkWell(
