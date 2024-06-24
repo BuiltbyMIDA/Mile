@@ -12,6 +12,7 @@ class TextFieldThem {
     required String hintText,
     required TextEditingController controller,
     TextInputType keyBoardType = TextInputType.text,
+  ValueChanged<String>? onChanged,
     bool enable = true,
     int maxLine = 1,
   }) {
@@ -23,6 +24,7 @@ class TextFieldThem {
         enabled: enable,
         keyboardType: keyBoardType,
         maxLines: maxLine,
+        onChanged: onChanged,
         style: GoogleFonts.manrope(color: Colors.black),
         decoration: InputDecoration(
             filled: true,

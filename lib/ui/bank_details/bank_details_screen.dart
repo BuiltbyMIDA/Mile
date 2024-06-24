@@ -2,6 +2,7 @@ import 'package:driver/constant/constant.dart';
 import 'package:driver/constant/show_toast_dialog.dart';
 import 'package:driver/controller/bank_details_controller.dart';
 import 'package:driver/model/bank_details_model.dart';
+import 'package:driver/model/bank_model.dart';
 import 'package:driver/themes/app_colors.dart';
 import 'package:driver/themes/button_them.dart';
 import 'package:driver/themes/responsive.dart';
@@ -52,23 +53,90 @@ class BankDetailsScreen extends StatelessWidget {
                                 const SizedBox(
                                   height: 30,
                                 ),
-                                Text(
-                                  "Bank Name".tr,
-                                  style: const TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 12,
-                                    fontFamily: 'Instrument Sans',
-                                    fontWeight: FontWeight.w500,
-                                    letterSpacing: -0.20,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                TextFieldThem.buildTextFiled(context,
-                                    hintText: 'Bank Name'.tr,
-                                    controller:
-                                        controller.bankNameController.value),
+                                // Text(
+                                //   "Bank Name".tr,
+                                //   style: const TextStyle(
+                                //     color: Colors.black,
+                                //     fontSize: 12,
+                                //     fontFamily: 'Instrument Sans',
+                                //     fontWeight: FontWeight.w500,
+                                //     letterSpacing: -0.20,
+                                //   ),
+                                // ),
+                                // const SizedBox(
+                                //   height: 5,
+                                // ),
+                                // TextFieldThem.buildTextFiled(context,
+                                //     hintText: 'Bank Name'.tr,
+                                //     controller:
+                                //         controller.bankNameController.value),
+
+
+                                DropdownButtonFormField<BankModelData>(
+                                    decoration: const InputDecoration(
+                                      filled: true,
+                                      fillColor: AppColors.textField,
+                                      contentPadding:
+                                      EdgeInsets.only(left: 10, right: 10),
+                                      disabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(12)),
+                                        borderSide: BorderSide(
+                                            color: AppColors.textFieldBorder,
+                                            width: 1),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(12)),
+                                        borderSide: BorderSide(
+                                            color: AppColors.textFieldBorder,
+                                            width: 1),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(12)),
+                                        borderSide: BorderSide(
+                                            color: AppColors.textFieldBorder,
+                                            width: 1),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(12)),
+                                        borderSide: BorderSide(
+                                            color: AppColors.textFieldBorder,
+                                            width: 1),
+                                      ),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(12)),
+                                        borderSide: BorderSide(
+                                            color: AppColors.textFieldBorder,
+                                            width: 1),
+                                      ),
+                                    ),
+                                    validator: (value) =>
+                                    value == null ? 'field required' : null,
+                                    value:
+                                    controller.selectedBank.value.id ==
+                                        null
+                                        ? null
+                                        : controller.selectedBank.value,
+                                    onChanged: (value) {
+                                      controller.selectedBank.value = value!;
+                                    },
+                                    hint: Text("Select Bank".tr, style: const TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      fontFamily: 'Instrument Sans',
+                                      fontWeight: FontWeight.w500,
+                                      letterSpacing: -0.20,
+                                    ),),
+                                    items: controller.bankList.map((item) {
+                                      return DropdownMenuItem(
+                                        value: item,
+                                        child: Text(item.name.toString(), overflow: TextOverflow.visible, ),
+                                      );
+                                    }).toList()),
                                 const SizedBox(
                                   height: 10,
                                 ),
@@ -88,7 +156,14 @@ class BankDetailsScreen extends StatelessWidget {
                                 TextFieldThem.buildTextFiled(context,
                                     hintText: 'Account Number'.tr,
                                     controller: controller
-                                        .accountNumberController.value),
+                                        .accountNumberController.value,
+                                    onChanged: (value){
+                                      if(value.length == 10){
+                                        print(value);
+                                        controller.payStackLookup();
+                                      }
+                                    }
+                                ),
                                 const SizedBox(
                                   height: 10,
                                 ),
@@ -107,8 +182,10 @@ class BankDetailsScreen extends StatelessWidget {
                                 ),
                                 TextFieldThem.buildTextFiled(context,
                                     hintText: 'Enter account name'.tr,
-                                    controller:
-                                        controller.holderNameController.value),
+                                    enable: false,
+                                    controller: controller.holderNameController.value,
+
+                                ),
                                 const SizedBox(
                                   height: 10,
                                 ),

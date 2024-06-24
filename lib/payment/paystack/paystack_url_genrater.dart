@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:driver/model/driver_user_model.dart';
+import 'package:driver/model/lookup_bank_model.dart';
 import 'package:driver/model/payment_model.dart';
 import 'package:driver/payment/paystack/pay_stack_url_model.dart';
 import 'package:flutter/foundation.dart';
@@ -22,6 +23,22 @@ class PayStackURLGen {
       return null;
     }
     return PayStackUrlModel.fromJson(data);
+  }
+
+  static Future payStackLookup({required String secretKey, required String account_number, required String bank_code}) async {
+    final url = "https://api.paystack.co/bank/resolve?account_number=$account_number&bank_code=$bank_code";
+    debugPrint(url);
+    var response = await http.get(Uri.parse(url), headers: {
+      "Authorization": "Bearer $secretKey",
+    });
+
+    debugPrint(response.headers.toString());
+    debugPrint(response.body);
+    final data = jsonDecode(response.body);
+    if (!data["status"]) {
+      return null;
+    }
+    return LookupBankModel.fromJson(data);
   }
 
   static Future<bool> verifyTransaction({
@@ -55,7 +72,7 @@ class PayStackURLGen {
       'merchant_id': payFastSettingData.merchantId,
       'merchant_key': payFastSettingData.merchantKey,
       'amount': amount,
-      'item_name': "goRide online payment",
+      'item_name': "mile online payment",
       'return_url': payFastSettingData.returnUrl,
       'cancel_url': payFastSettingData.cancelUrl,
       'notify_url': payFastSettingData.notifyUrl,

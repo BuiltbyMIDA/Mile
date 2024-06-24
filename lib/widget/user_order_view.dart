@@ -39,7 +39,7 @@ class UserDriverView extends StatelessWidget {
                               fit: BoxFit.cover,
                               placeholder: (context, url) => Constant.loader(context),
                               errorWidget: (context, url, error) => Image.network(
-                                  'https://firebasestorage.googleapis.com/v0/b/goride-1a752.appspot.com/o/placeholderImages%2Fuser-placeholder.jpeg?alt=media&token=34a73d67-ba1d-4fe4-a29f-271d3e3ca115'),
+                                  'https://firebasestorage.googleapis.com/v0/b/mile-e1045.appspot.com/o/placeholderImages%2Fuser-placeholder.jpeg?alt=media&token=34a73d67-ba1d-4fe4-a29f-271d3e3ca115'),
                             ),
                           ),
                           const SizedBox(
@@ -97,7 +97,7 @@ class UserDriverView extends StatelessWidget {
                               fit: BoxFit.cover,
                               placeholder: (context, url) => Constant.loader(context),
                               errorWidget: (context, url, error) => Image.network(
-                                  'https://firebasestorage.googleapis.com/v0/b/goride-1a752.appspot.com/o/placeholderImages%2Fuser-placeholder.jpeg?alt=media&token=34a73d67-ba1d-4fe4-a29f-271d3e3ca115'),
+                                  'https://firebasestorage.googleapis.com/v0/b/mile-e1045.appspot.com/o/placeholderImages%2Fuser-placeholder.jpeg?alt=media&token=34a73d67-ba1d-4fe4-a29f-271d3e3ca115'),
                             ),
                           ),
                           const SizedBox(
